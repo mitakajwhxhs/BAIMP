@@ -1,0 +1,16 @@
+{
+    "cookies":  [
+
+                ],
+    "origins":  [
+                    {
+                        "localStorage":  [
+                                             {
+                                                 "value":  "true",
+                                                 "name":  "baimp-admin-session"
+                                             }
+                                         ],
+                        "origin":  "http://127.0.0.1:5173"
+                    }
+                ]
+}
