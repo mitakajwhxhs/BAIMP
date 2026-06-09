@@ -2,8 +2,10 @@ import { useCallback, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, X } from 'lucide-react'
 import { ToastContext } from '../../lib/toastContext.js'
+import { useLanguage } from '../../i18n/useLanguage.js'
 
 export function ToastProvider({ children }) {
+  const { select } = useLanguage()
   const [toasts, setToasts] = useState([])
 
   const pushToast = useCallback((message, type = 'success') => {
@@ -35,7 +37,7 @@ export function ToastProvider({ children }) {
               <p className="flex-1 text-sm leading-6">{toast.message}</p>
               <button
                 type="button"
-                aria-label="Затвори"
+                aria-label={select('Close', 'Затвори')}
                 onClick={() =>
                   setToasts((current) => current.filter((item) => item.id !== toast.id))
                 }

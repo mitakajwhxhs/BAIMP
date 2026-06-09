@@ -53,8 +53,20 @@ const matchesQuery = (item, query) => {
   return searchable.includes(query.trim().toLowerCase())
 }
 
-export function AdminResourcePage({ title, description, table, fallback, fields, imageBucket }) {
-  const { items, createItem, updateItem, deleteItem } = useLocalCollection(table, fallback)
+export function AdminResourcePage({
+  title,
+  description,
+  table,
+  fallback,
+  fields,
+  imageBucket,
+  collectionOptions,
+}) {
+  const { items, createItem, updateItem, deleteItem } = useLocalCollection(
+    table,
+    fallback,
+    collectionOptions,
+  )
   const { pushToast } = useToast()
   const initialForm = useMemo(() => {
     const seed = {}

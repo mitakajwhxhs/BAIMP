@@ -1,7 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
+import { useLanguage } from '../../i18n/useLanguage.js'
 
 export function Modal({ open, onClose, title, children }) {
+  const { select } = useLanguage()
+
   return (
     <AnimatePresence>
       {open ? (
@@ -21,7 +24,7 @@ export function Modal({ open, onClose, title, children }) {
               <h2 className="text-2xl font-semibold text-[#153b34]">{title}</h2>
               <button
                 type="button"
-                aria-label="Затвори"
+                aria-label={select('Close', 'Затвори')}
                 className="focus-ring rounded-md border border-[#dfd0b9] bg-white p-2 text-[#2f5f55] transition duration-300 hover:bg-[#ede4d6]"
                 onClick={onClose}
               >

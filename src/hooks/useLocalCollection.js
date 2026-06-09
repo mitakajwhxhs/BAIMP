@@ -1,13 +1,25 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { hasSupabase, supabase } from '../lib/supabaseClient.js'
 
-const storageKey = (table) => `baimp-${table}`
+const storageKey = (table) => `baimp-en-${table}`
+
+const mergeRequiredFallback = (items, fallback, requiredIds = []) => {
+  if (!requiredIds.length || !Array.isArray(items)) return items
+
+  const itemIds = new Set(items.map((item) => item.id))
+  const missingItems = fallback.filter(
+    (item) => requiredIds.includes(item.id) && !itemIds.has(item.id),
+  )
+
+  return [...items, ...missingItems]
+}
 
 export function useLocalCollection(table, fallback = [], options = {}) {
   const remote = options.remote ?? hasSupabase
   const [items, setItems] = useState(() => {
     const raw = localStorage.getItem(storageKey(table))
-    return raw ? JSON.parse(raw) : fallback
+    const stored = raw ? JSON.parse(raw) : fallback
+    return mergeRequiredFallback(stored, fallback, options.requiredFallbackIds)
   })
   const [loading, setLoading] = useState(Boolean(remote))
   const [error, setError] = useState(null)
@@ -29,7 +41,7 @@ export function useLocalCollection(table, fallback = [], options = {}) {
       if (remoteError) {
         setError(remoteError.message)
       } else if (data) {
-        setItems(data)
+        setItems(mergeRequiredFallback(data, fallback, options.requiredFallbackIds))
       }
       setLoading(false)
     }
@@ -38,7 +50,7 @@ export function useLocalCollection(table, fallback = [], options = {}) {
     return () => {
       active = false
     }
-  }, [options.orderBy, options.skipRemoteLoad, remote, table])
+  }, [fallback, options.orderBy, options.requiredFallbackIds, options.skipRemoteLoad, remote, table])
 
   useEffect(() => {
     localStorage.setItem(storageKey(table), JSON.stringify(items))

@@ -5,7 +5,7 @@ import { FloatingContactButton } from './FloatingContactButton.jsx'
 
 export function PublicLayout() {
   return (
-    <div className="min-h-screen bg-[#fbf8f1]">
+    <div className="site-shell min-h-screen">
       <Header />
       <main>
         <Outlet />

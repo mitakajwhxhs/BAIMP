@@ -1,6 +1,13 @@
 import { Award, BookOpen, CalendarClock, Newspaper, Users } from 'lucide-react'
 import { useLocalCollection } from '../hooks/useLocalCollection.js'
-import { certificates, courses, emptyBookings, news, trainers } from '../data/baimpData.js'
+import {
+  certificates,
+  courses,
+  emptyBookings,
+  news,
+  trainerIds,
+  trainers,
+} from '../data/baimpData.js'
 
 function Stat({ icon: Icon, label, value }) {
   return (
@@ -13,7 +20,9 @@ function Stat({ icon: Icon, label, value }) {
 }
 
 export function AdminDashboard() {
-  const { items: trainerItems } = useLocalCollection('trainers', trainers)
+  const { items: trainerItems } = useLocalCollection('trainers', trainers, {
+    requiredFallbackIds: trainerIds,
+  })
   const { items: courseItems } = useLocalCollection('courses', courses)
   const { items: newsItems } = useLocalCollection('news', news)
   const { items: bookingItems } = useLocalCollection('bookings', emptyBookings)

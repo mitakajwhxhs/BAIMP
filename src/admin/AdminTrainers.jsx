@@ -1,5 +1,5 @@
 import { AdminResourcePage } from './AdminResourcePage.jsx'
-import { trainers } from '../data/baimpData.js'
+import { trainerIds, trainers } from '../data/baimpData.js'
 
 const fields = [
   { name: 'name', label: 'Име' },
@@ -30,6 +30,7 @@ export function AdminTrainers() {
       fallback={trainers}
       fields={fields}
       imageBucket="trainer-photos"
+      collectionOptions={{ requiredFallbackIds: trainerIds }}
     />
   )
 }
