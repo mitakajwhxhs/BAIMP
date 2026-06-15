@@ -28,7 +28,7 @@ export const documentTrainers = [
       'Her professional background includes experience in management, international business, tourism, logistics, and communication, which has contributed to a broad understanding of human behavior and interpersonal relationships. She has completed internship placements in organizations and centers working with children, individuals with mental health difficulties, and people with special educational needs.',
       'Currently, Mariana Stratieva runs a private psychological practice, working with children, adolescents, and adults in the areas of psychological counseling, personal growth, and emotional well-being.',
     ],
-    sort_order: 11,
+    sort_order: 14,
   }),
   createTrainer({
     id: 'kalin-tzanov',
@@ -50,7 +50,7 @@ export const documentTrainers = [
       'Kalin Tzanov is a long-standing trainer, supervisor, and former president of the Bulgarian Association of Hypnosis and Hypnotherapy. He is accredited as a lecturer and supervisor by the European Society of Hypnosis (ESH) and actively participates in the education and professional development of specialists in psychotherapy, hypnosis, and psychological counseling.',
       'Currently, Kalin Tzanov maintains a private practice in Sofia, providing counseling and psychotherapy services to children, adolescents, and adults. His main professional interests include psychotherapy, hypnotherapy, anxiety disorders, personal development, and the training of future mental health professionals.',
     ],
-    sort_order: 12,
+    sort_order: 4,
   }),
   createTrainer({
     id: 'valentin-akabaliev',
@@ -72,7 +72,7 @@ export const documentTrainers = [
       'Professor Valentin Akabaliev is a member of the Bulgarian Medical Association and the Bulgarian Psychiatric Association. Over the years, he has played an active role in the advancement of medical education, scientific research, and the professional training of future physicians, psychiatrists, and psychologists.',
       'Currently, Professor Valentin Akabaliev continues his academic, scientific, and clinical work at the Department of Psychiatry and Medical Psychology of the Medical University of Plovdiv and remains one of the most respected and influential specialists in the fields of psychiatry and medical psychology in Bulgaria.',
     ],
-    sort_order: 13,
+    sort_order: 5,
   }),
   createTrainer({
     id: 'plamen-ribarov',
@@ -94,7 +94,7 @@ export const documentTrainers = [
       'His professional experience encompasses psychological counseling, psychotherapy, adult education, and organizational development. He possesses strong communication, organizational, and presentation skills, developed through extensive work with diverse professional and social groups.',
       'Currently, Plamen Ribarov combines his work as a psychologist, psychotherapist, and trainer, actively contributing to the fields of mental health, professional development, and the prevention of socially significant problems affecting children, adolescents, and adults.',
     ],
-    sort_order: 14,
+    sort_order: 11,
   }),
   createTrainer({
     id: 'plamen-vargov',
@@ -116,7 +116,7 @@ export const documentTrainers = [
       'Since 2025, he has been a lecturer and trainer with the Bulgarian Association for Intermodal Psychotherapy. He is also actively involved in delivering training programs focused on emotional intelligence, resilience, stress management, and burnout prevention.',
       'Currently, Plamen Vargov combines his work as a psychologist, trainer, and consultant, providing services to children, adolescents, adults, and professional communities. His primary professional interests include psychological counseling, specialist training, supervision, and the development of social and educational programs.',
     ],
-    sort_order: 15,
+    sort_order: 7,
   }),
   createTrainer({
     id: 'donika-ivanova',
@@ -158,7 +158,7 @@ export const documentTrainers = [
       'Since 2026, Vyara Peneva has also been a trainer with the Bulgarian Institute of Intermodal Psychology, delivering practical training modules and supporting the professional development of specialists in the helping professions.',
       'Her primary professional interests include trauma therapy, EMDR, family and systemic counseling, crisis intervention, adolescent mental health, emotional regulation, and the prevention of risk behaviors and addictions among young people.',
     ],
-    sort_order: 17,
+    sort_order: 15,
   }),
   createTrainer({
     id: 'elena-atanasova',
@@ -179,7 +179,7 @@ export const documentTrainers = [
       'Currently, she serves as a Board Member of the Bulgarian Association of Hypnosis and Hypnotherapy (BAHH), a trainer with the Bulgarian Association for Intermodal Psychotherapy (BAIMP), and a co-founder of the Bulgarian Psycho-Oncology Association.',
       'Elena Atanasova is the author and co-author of scientific publications, monographs, and clinical practice guides in the fields of psycho-oncology, hypnotherapy, and psychosocial rehabilitation. Her work combines clinical expertise, academic contribution, and professional training, making her one of the leading specialists in psycho-oncology and integrative psychological care in Bulgaria.',
     ],
-    sort_order: 18,
+    sort_order: 8,
   }),
 ]
 

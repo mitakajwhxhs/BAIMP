@@ -1,4 +1,4 @@
-export const traineeProfilesBg = [
+const traineeProfilesBgUnordered = [
   {
     slug: 'petya-mindalova',
     name: 'Петя Миндалова',
@@ -141,3 +141,26 @@ export const traineeProfilesBg = [
     ],
   },
 ]
+
+const traineeProfileOrderBg = [
+  'Надежда Пелева',
+  'Малина Донева',
+  'Габриела Иванова',
+  'Надежда Атанасова',
+  'Катя Мицина',
+  'Петя Миндалова',
+  'Невена Друмева',
+  'Виктория Георгиева',
+  'Петя Славчева',
+  'Вилизара Лилова',
+  'Венелина Пепелова',
+]
+
+const traineeProfileOrderIndexBg = new Map(
+  traineeProfileOrderBg.map((name, index) => [name, index]),
+)
+
+export const traineeProfilesBg = [...traineeProfilesBgUnordered].sort(
+  (left, right) =>
+    traineeProfileOrderIndexBg.get(left.name) - traineeProfileOrderIndexBg.get(right.name),
+)

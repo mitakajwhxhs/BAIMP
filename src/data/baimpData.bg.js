@@ -181,7 +181,7 @@ const originalTrainers = [
     memberships: ['БАИМП'],
     is_featured: true,
     is_published: true,
-    sort_order: 4,
+    sort_order: 6,
   },
   {
     id: 'gergana-buhova',
@@ -223,7 +223,7 @@ const originalTrainers = [
     memberships: ['Българско общество по аналитична психология, C. G. Jung', 'БАИМП'],
     is_featured: false,
     is_published: true,
-    sort_order: 5,
+    sort_order: 10,
   },
   {
     id: 'stefania-gabrovska-shirova',
@@ -253,7 +253,7 @@ const originalTrainers = [
     memberships: ['БАИМП'],
     is_featured: false,
     is_published: true,
-    sort_order: 6,
+    sort_order: 9,
   },
   {
     id: 'stanimira-peykova',
@@ -289,7 +289,7 @@ const originalTrainers = [
     memberships: ['БАИМП от 2024 г.', 'Участия в конференции и събития по приложна психология и психотерапия'],
     is_featured: false,
     is_published: true,
-    sort_order: 7,
+    sort_order: 18,
   },
   {
     id: 'viktoria-dyakova',
@@ -333,7 +333,7 @@ const originalTrainers = [
     memberships: ['БАИМП'],
     is_featured: false,
     is_published: true,
-    sort_order: 8,
+    sort_order: 12,
   },
   {
     id: 'ivanka-djoneva',
@@ -363,7 +363,7 @@ const originalTrainers = [
     memberships: ['БАИМП'],
     is_featured: false,
     is_published: true,
-    sort_order: 9,
+    sort_order: 13,
   },
   {
     id: 'chudomir-delchev',
@@ -397,7 +397,7 @@ const originalTrainers = [
     memberships: ['БАИМП'],
     is_featured: false,
     is_published: true,
-    sort_order: 10,
+    sort_order: 17,
   },
 ]
 

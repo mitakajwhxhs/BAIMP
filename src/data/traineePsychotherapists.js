@@ -117,7 +117,7 @@ export const traineeGroups = [
   },
 ]
 
-export const traineeProfiles = [
+const traineeProfilesUnordered = [
   {
     name: 'Petya Mindalova',
     title: 'Psychologist and psychotherapist in training',
@@ -257,3 +257,26 @@ export const traineeProfiles = [
     ],
   },
 ]
+
+const traineeProfileOrder = [
+  'Nadezhda Peleva',
+  'Malina Doneva',
+  'Gabriela Ivanova',
+  'Nadezhda Atanasova',
+  'Katya Mitsina',
+  'Petya Mindalova',
+  'Nevena Drumeva',
+  'Victoria Georgieva',
+  'Petya Slavcheva',
+  'Vilizara Lilova',
+  'Venelina Pepelova',
+]
+
+const traineeProfileOrderIndex = new Map(
+  traineeProfileOrder.map((name, index) => [name, index]),
+)
+
+export const traineeProfiles = [...traineeProfilesUnordered].sort(
+  (left, right) =>
+    traineeProfileOrderIndex.get(left.name) - traineeProfileOrderIndex.get(right.name),
+)
