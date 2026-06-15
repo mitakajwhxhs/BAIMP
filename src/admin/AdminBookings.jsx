@@ -19,18 +19,18 @@ export function AdminBookings() {
   } = useLocalCollection('contact_requests', [])
   const { pushToast } = useToast()
 
-  const nameFor = (collection, id) => collection.find((item) => item.id === id)?.name || collection.find((item) => item.id === id)?.title || 'Без избор'
+  const nameFor = (collection, id) => collection.find((item) => item.id === id)?.name || collection.find((item) => item.id === id)?.title || 'No selection'
 
   const setStatus = async (booking, status) => {
     await updateItem(booking.id, { status })
-    pushToast(`Статусът е променен на ${status}.`)
+    pushToast(`Status changed to ${status}.`)
   }
 
   return (
     <div className="grid gap-6">
       <section className="rounded-lg border border-[#eadfce] bg-white p-6">
-        <p className="text-sm font-bold uppercase text-[#bd9560]">Заявки</p>
-        <h1 className="mt-2 text-3xl font-semibold text-[#173c35]">Онлайн записвания</h1>
+        <p className="text-sm font-bold uppercase text-[#bd9560]">Requests</p>
+        <h1 className="mt-2 text-3xl font-semibold text-[#173c35]">Online applications</h1>
       </section>
       <section className="grid gap-4">
         {items.length ? (
@@ -53,12 +53,12 @@ export function AdminBookings() {
                     </a>
                     <span className="flex items-center gap-2">
                       <Calendar className="h-4 w-4 text-[#bd9560]" />
-                      {booking.preferred_date || 'без дата'}
+                      {booking.preferred_date || 'no date'}
                     </span>
                   </div>
                   <div className="mt-4 grid gap-2 text-sm text-[#315c4f]">
-                    <p>Обучител: {nameFor(trainers, booking.trainer_id)}</p>
-                    <p>Курс/услуга: {nameFor(courses, booking.course_id)}</p>
+                    <p>Trainer: {nameFor(trainers, booking.trainer_id)}</p>
+                    <p>Course/service: {nameFor(courses, booking.course_id)}</p>
                   </div>
                   {booking.message ? <p className="mt-4 text-base leading-7 text-[#66736f]">{booking.message}</p> : null}
                 </div>
@@ -70,19 +70,19 @@ export function AdminBookings() {
                     Reject
                   </Button>
                   <Button variant="ghost" onClick={() => deleteItem(booking.id)}>
-                    Изтрий
+                    Delete
                   </Button>
                 </div>
               </div>
             </article>
           ))
         ) : (
-          <div className="rounded-lg border border-[#eadfce] bg-white p-8 text-center text-[#66736f]">Няма заявки.</div>
+          <div className="rounded-lg border border-[#eadfce] bg-white p-8 text-center text-[#66736f]">No applications.</div>
         )}
       </section>
       <section className="grid gap-4">
         <div className="rounded-lg border border-[#eadfce] bg-white p-5">
-          <h2 className="text-2xl font-semibold text-[#173c35]">Контактни запитвания</h2>
+          <h2 className="text-2xl font-semibold text-[#173c35]">Contact inquiries</h2>
         </div>
         {contactRequests.length ? (
           contactRequests.map((request) => (
@@ -113,7 +113,7 @@ export function AdminBookings() {
                     icon={Check}
                     onClick={async () => {
                       await updateContact(request.id, { status: 'approved' })
-                      pushToast('Запитването е маркирано като approved.')
+                      pushToast('The inquiry was marked as approved.')
                     }}
                   >
                     Approve
@@ -123,13 +123,13 @@ export function AdminBookings() {
                     icon={X}
                     onClick={async () => {
                       await updateContact(request.id, { status: 'rejected' })
-                      pushToast('Запитването е маркирано като rejected.')
+                      pushToast('The inquiry was marked as rejected.')
                     }}
                   >
                     Reject
                   </Button>
                   <Button variant="ghost" onClick={() => deleteContact(request.id)}>
-                    Изтрий
+                    Delete
                   </Button>
                 </div>
               </div>
@@ -137,7 +137,7 @@ export function AdminBookings() {
           ))
         ) : (
           <div className="rounded-lg border border-[#eadfce] bg-white p-8 text-center text-[#66736f]">
-            Няма контактни запитвания.
+            No contact inquiries.
           </div>
         )}
       </section>

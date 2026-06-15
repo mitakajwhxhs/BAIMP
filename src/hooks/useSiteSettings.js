@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
-import { siteContent } from '../data/baimpData.js'
-import { hasSupabase, supabase } from '../lib/supabaseClient.js'
+import { siteContent } from '../data/siteContent.js'
+import { getSupabase, hasSupabase } from '../lib/supabaseClient.js'
+import { readStoredJson, writeStoredJson } from '../lib/storage.js'
 
 const key = 'baimp-site-settings'
 
@@ -24,29 +25,28 @@ const mergeSettings = (saved) => {
 }
 
 export function useSiteSettings() {
-  const [settings, setSettings] = useState(() => {
-    const saved = localStorage.getItem(key)
-    if (!saved) return siteContent
-
-    return mergeSettings(JSON.parse(saved))
-  })
+  const [settings, setSettings] = useState(() =>
+    mergeSettings(readStoredJson(key, siteContent)),
+  )
 
   const saveSettings = useCallback((next) => {
     setSettings(next)
-    localStorage.setItem(key, JSON.stringify(next))
+    writeStoredJson(key, next)
 
     if (hasSupabase) {
-      supabase
-        .from('site_settings')
-        .upsert({
-          key: 'site_content',
-          value: next,
-          is_public: true,
-          updated_at: new Date().toISOString(),
-        })
+      getSupabase()
+        .then((supabase) =>
+          supabase.from('site_settings').upsert({
+            key: 'site_content',
+            value: next,
+            is_public: true,
+            updated_at: new Date().toISOString(),
+          }),
+        )
         .then(({ error }) => {
           if (error) console.error(error)
         })
+        .catch((error) => console.error(error))
     }
   }, [])
 
@@ -56,6 +56,7 @@ export function useSiteSettings() {
     async function loadRemoteSettings() {
       if (!hasSupabase) return
 
+      const supabase = await getSupabase()
       const { data, error } = await supabase
         .from('site_settings')
         .select('value')

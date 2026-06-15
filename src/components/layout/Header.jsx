@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import { useSiteSettings } from '../../hooks/useSiteSettings.js'
 import { useLanguage } from '../../i18n/useLanguage.js'
-import { localizeSettings } from '../../i18n/localizedData.js'
 
 const getNavItems = (select) => [
   { label: select('Home', 'Начало'), to: '/' },
@@ -81,9 +80,8 @@ function DropdownItem({ item }) {
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [openMobileGroup, setOpenMobileGroup] = useState(null)
-  const { settings: storedSettings } = useSiteSettings()
-  const { language, select } = useLanguage()
-  const settings = localizeSettings(storedSettings, language)
+  const { settings } = useSiteSettings()
+  const { select } = useLanguage()
   const navItems = getNavItems(select)
   const { pathname } = useLocation()
 

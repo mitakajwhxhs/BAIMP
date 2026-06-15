@@ -3,15 +3,15 @@ import { useState } from 'react'
 import { NavLink, Outlet, useNavigate } from 'react-router-dom'
 
 const links = [
-  { path: '', label: 'Преглед', end: true },
-  { path: 'news', label: 'Новини' },
-  { path: 'trainers', label: 'Обучители' },
-  { path: 'courses', label: 'Курсове' },
-  { path: 'bookings', label: 'Заявки' },
-  { path: 'partners', label: 'Партньори' },
-  { path: 'certificates', label: 'Сертификати' },
-  { path: 'testimonials', label: 'Мнения' },
-  { path: 'settings', label: 'Настройки на сайта' },
+  { path: '', label: 'Overview', end: true },
+  { path: 'news', label: 'News' },
+  { path: 'trainers', label: 'Trainers' },
+  { path: 'courses', label: 'Courses' },
+  { path: 'bookings', label: 'Requests' },
+  { path: 'partners', label: 'Partners' },
+  { path: 'certificates', label: 'Certificates' },
+  { path: 'testimonials', label: 'Testimonials' },
+  { path: 'settings', label: 'Site settings' },
 ]
 
 const linkClass = ({ isActive }) =>
@@ -42,13 +42,13 @@ export function AdminLayout({ basePath = '/admin-secret-panel', logoutPath = '/a
               type="button"
               className="focus-ring rounded-md border border-white/20 bg-white/10 p-2 text-white lg:hidden"
               onClick={() => setOpen((current) => !current)}
-              aria-label="Админ меню"
+              aria-label="Admin menu"
             >
               <Menu className="h-5 w-5" />
             </button>
             <div>
-              <p className="text-sm font-bold uppercase text-[#f1d4a4]">БАИМП</p>
-              <h1 className="text-2xl font-semibold">Админ панел</h1>
+              <p className="text-sm font-bold uppercase text-[#f1d4a4]">BAIMP</p>
+              <h1 className="text-2xl font-semibold">Admin panel</h1>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -59,7 +59,7 @@ export function AdminLayout({ basePath = '/admin-secret-panel', logoutPath = '/a
               className="focus-ring hidden items-center gap-2 rounded-md border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-white/18 sm:inline-flex"
             >
               <ExternalLink className="h-4 w-4" />
-              Виж сайта
+              View site
             </a>
             <button
               type="button"
@@ -67,7 +67,7 @@ export function AdminLayout({ basePath = '/admin-secret-panel', logoutPath = '/a
               className="focus-ring inline-flex items-center gap-2 rounded-md border border-white/20 bg-white px-4 py-2 text-sm font-semibold text-[#173c35] transition hover:bg-[#f4ede2]"
             >
               <LogOut className="h-4 w-4" />
-              Изход
+              Log out
             </button>
           </div>
         </div>
@@ -76,8 +76,8 @@ export function AdminLayout({ basePath = '/admin-secret-panel', logoutPath = '/a
         <aside className={`${open ? 'block' : 'hidden'} lg:block`}>
           <nav className="sticky top-28 grid gap-2 rounded-lg border border-[#d8c7a9] bg-white p-3 shadow-[0_18px_50px_rgba(23,60,53,0.08)]">
             <div className="border-b border-[#eadfce] px-3 py-3">
-              <p className="text-xs font-bold uppercase text-[#bd9560]">Редакция</p>
-              <p className="mt-1 text-sm leading-6 text-[#66736f]">Изберете секция и редактирайте съдържанието директно.</p>
+              <p className="text-xs font-bold uppercase text-[#bd9560]">Content</p>
+              <p className="mt-1 text-sm leading-6 text-[#66736f]">Choose a section and edit its content directly.</p>
             </div>
             {links.map((link) => (
               <NavLink

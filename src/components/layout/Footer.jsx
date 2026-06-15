@@ -2,13 +2,11 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useSiteSettings } from '../../hooks/useSiteSettings.js'
 import { useLanguage } from '../../i18n/useLanguage.js'
-import { localizeSettings } from '../../i18n/localizedData.js'
 import { FacebookIcon, InstagramIcon } from '../ui/SocialIcons.jsx'
 
 export function Footer() {
-  const { settings: storedSettings } = useSiteSettings()
-  const { language, select } = useLanguage()
-  const settings = localizeSettings(storedSettings, language)
+  const { settings } = useSiteSettings()
+  const { select } = useLanguage()
   const contact = settings.contact
 
   return (

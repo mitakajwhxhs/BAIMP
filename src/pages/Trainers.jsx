@@ -16,6 +16,7 @@ export function Trainers() {
   const { items } = useLocalCollection('trainers', trainers, {
     remote: false,
     requiredFallbackIds: trainerIds,
+    preferFallbackFields: ['image_url'],
   })
   const localizedData = getLocalizedData(language)
   const [query, setQuery] = useState('')

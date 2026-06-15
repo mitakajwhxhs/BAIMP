@@ -2,35 +2,38 @@ import { AdminResourcePage } from './AdminResourcePage.jsx'
 import { trainerIds, trainers } from '../data/baimpData.js'
 
 const fields = [
-  { name: 'name', label: 'Име' },
+  { name: 'name', label: 'Name' },
   { name: 'slug', label: 'Slug' },
-  { name: 'title', label: 'Титла' },
-  { name: 'city', label: 'Град' },
-  { name: 'image_url', label: 'Снимка URL / Supabase Storage URL', type: 'image' },
-  { name: 'specialties', label: 'Специалности (по един ред)', type: 'array' },
-  { name: 'badges', label: 'Badges / квалификации (по един ред)', type: 'array' },
-  { name: 'short_bio', label: 'Кратко описание', type: 'textarea' },
-  { name: 'bio', label: 'Биография (параграфи по един ред)', type: 'array' },
-  { name: 'education', label: 'Образование (по един ред)', type: 'array' },
-  { name: 'qualifications', label: 'Квалификации (по един ред)', type: 'array' },
-  { name: 'experience', label: 'Опит (по един ред)', type: 'array' },
-  { name: 'topics', label: 'Теми на работа (по един ред)', type: 'array' },
-  { name: 'memberships', label: 'Членства (по един ред)', type: 'array' },
-  { name: 'sort_order', label: 'Подредба', type: 'number', defaultValue: 99 },
-  { name: 'is_featured', label: 'Избран обучител', type: 'checkbox' },
-  { name: 'is_published', label: 'Публикуван', type: 'checkbox', defaultValue: true },
+  { name: 'title', label: 'Title' },
+  { name: 'city', label: 'City' },
+  { name: 'image_url', label: 'Photo URL / Supabase Storage URL', type: 'image' },
+  { name: 'specialties', label: 'Specialties (one per line)', type: 'array' },
+  { name: 'badges', label: 'Badges / qualifications (one per line)', type: 'array' },
+  { name: 'short_bio', label: 'Short description', type: 'textarea' },
+  { name: 'bio', label: 'Biography (one paragraph per line)', type: 'array' },
+  { name: 'education', label: 'Education (one per line)', type: 'array' },
+  { name: 'qualifications', label: 'Qualifications (one per line)', type: 'array' },
+  { name: 'experience', label: 'Experience (one per line)', type: 'array' },
+  { name: 'topics', label: 'Areas of work (one per line)', type: 'array' },
+  { name: 'memberships', label: 'Memberships (one per line)', type: 'array' },
+  { name: 'sort_order', label: 'Sort order', type: 'number', defaultValue: 99 },
+  { name: 'is_featured', label: 'Featured trainer', type: 'checkbox' },
+  { name: 'is_published', label: 'Published', type: 'checkbox', defaultValue: true },
 ]
 
 export function AdminTrainers() {
   return (
     <AdminResourcePage
-      title="Обучители"
-      description="Добавяне, редакция, снимки, биографии, специалности, квалификации, опит, членства и видимост."
+      title="Trainers"
+      description="Manage trainers, photos, biographies, specialties, qualifications, experience, memberships and visibility."
       table="trainers"
       fallback={trainers}
       fields={fields}
       imageBucket="trainer-photos"
-      collectionOptions={{ requiredFallbackIds: trainerIds }}
+      collectionOptions={{
+        requiredFallbackIds: trainerIds,
+        preferFallbackFields: ['image_url'],
+      }}
     />
   )
 }

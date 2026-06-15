@@ -7,9 +7,9 @@ import { uploadPublicFile } from '../lib/storage.js'
 import { useToast } from '../hooks/useToast.js'
 
 const fieldHelp = {
-  array: 'Всеки ред се записва като отделен елемент.',
-  image: 'Поставете URL или качете изображение от компютъра.',
-  textarea: 'Можете да пишете по-дълъг текст.',
+  array: 'Each line is saved as a separate item.',
+  image: 'Enter a URL or upload an image from your computer.',
+  textarea: 'You can enter longer text here.',
 }
 
 const formatValue = (field, value) => {
@@ -31,8 +31,8 @@ const parseValue = (field, value) => {
 }
 
 const statusLabel = (item) => {
-  if (item.is_published === false) return 'Чернова'
-  return 'Публикувано'
+  if (item.is_published === false) return 'Draft'
+  return 'Published'
 }
 
 const matchesQuery = (item, query) => {
@@ -111,23 +111,31 @@ export function AdminResourcePage({
       payload.slug = slugify(payload.name || payload.title)
     }
 
-    if (editingId) {
-      await updateItem(editingId, payload)
-      pushToast('Записът е обновен.')
-    } else {
-      await createItem(payload)
-      pushToast('Записът е добавен.')
+    try {
+      if (editingId) {
+        await updateItem(editingId, payload)
+        pushToast('The record was updated.')
+      } else {
+        await createItem(payload)
+        pushToast('The record was added.')
+      }
+      reset()
+    } catch (error) {
+      pushToast(error.message || 'The record could not be saved.', 'error')
     }
-    reset()
   }
 
   const remove = async (item) => {
-    const label = item.name || item.title || 'този запис'
-    if (!window.confirm(`Да изтрия ли "${label}"?`)) return
+    const label = item.name || item.title || 'this record'
+    if (!window.confirm(`Delete "${label}"?`)) return
 
-    await deleteItem(item.id)
-    if (editingId === item.id) reset()
-    pushToast('Записът е изтрит.')
+    try {
+      await deleteItem(item.id)
+      if (editingId === item.id) reset()
+      pushToast('The record was deleted.')
+    } catch (error) {
+      pushToast(error.message || 'The record could not be deleted.', 'error')
+    }
   }
 
   const uploadImage = async (field, file) => {
@@ -136,9 +144,9 @@ export function AdminResourcePage({
     try {
       const url = await uploadPublicFile(imageBucket || 'site-assets', file, `${table}/`)
       setForm((current) => ({ ...current, [field.name]: url }))
-      pushToast('Изображението е качено.')
+      pushToast('The image was uploaded.')
     } catch (error) {
-      pushToast(error.message || 'Грешка при качване.', 'error')
+      pushToast(error.message || 'Upload failed.', 'error')
     } finally {
       setUploadingField('')
     }
@@ -152,7 +160,7 @@ export function AdminResourcePage({
     <div className="grid gap-6">
       <section className="overflow-hidden rounded-lg border border-[#d8c7a9] bg-white shadow-[0_18px_55px_rgba(23,60,53,0.08)]">
         <div className="border-b border-[#eadfce] bg-[#173c35] px-6 py-5 text-white">
-          <p className="text-sm font-bold uppercase text-[#f1d4a4]">Управление на съдържание</p>
+          <p className="text-sm font-bold uppercase text-[#f1d4a4]">Content management</p>
           <h1 className="mt-2 text-3xl font-semibold">{title}</h1>
           {description ? <p className="mt-3 max-w-3xl text-base leading-7 text-white/75">{description}</p> : null}
         </div>
@@ -162,12 +170,12 @@ export function AdminResourcePage({
             <input
               className="field pl-10"
               value={query}
-              placeholder="Търсене в списъка"
+              placeholder="Search the list"
               onChange={(event) => setQuery(event.target.value)}
             />
           </div>
           <Button type="button" icon={Plus} onClick={reset}>
-            Нов запис
+            New record
           </Button>
         </div>
       </section>
@@ -176,8 +184,8 @@ export function AdminResourcePage({
         <div className="rounded-lg border border-[#eadfce] bg-white p-4 shadow-[0_14px_40px_rgba(23,60,53,0.06)]">
           <div className="mb-4 flex items-center justify-between gap-3">
             <div>
-              <h2 className="text-xl font-semibold text-[#173c35]">Записи</h2>
-              <p className="mt-1 text-sm text-[#66736f]">{filteredItems.length} от {items.length}</p>
+              <h2 className="text-xl font-semibold text-[#173c35]">Records</h2>
+              <p className="mt-1 text-sm text-[#66736f]">{filteredItems.length} of {items.length}</p>
             </div>
             <Eye className="h-5 w-5 text-[#bd9560]" />
           </div>
@@ -199,7 +207,7 @@ export function AdminResourcePage({
                       type="button"
                       className="h-20 w-20 overflow-hidden rounded-md bg-[#eadfce]"
                       onClick={() => startEdit(item)}
-                      aria-label="Редактирай запис"
+                      aria-label="Edit record"
                     >
                       {item.image_url ? (
                         <img src={item.image_url} alt="" className="h-full w-full object-cover object-top" />
@@ -210,9 +218,9 @@ export function AdminResourcePage({
                       )}
                     </button>
                     <button type="button" className="text-left" onClick={() => startEdit(item)}>
-                      <h3 className="font-semibold leading-snug text-[#173c35]">{item.name || item.title || 'Без заглавие'}</h3>
+                      <h3 className="font-semibold leading-snug text-[#173c35]">{item.name || item.title || 'Untitled'}</h3>
                       <p className="mt-1 line-clamp-2 text-sm leading-6 text-[#66736f]">
-                        {item.summary || item.type || item.title || item.role || 'Няма описание'}
+                        {item.summary || item.type || item.title || item.role || 'No description'}
                       </p>
                       <div className="mt-2 flex flex-wrap gap-2">
                         <span
@@ -224,7 +232,7 @@ export function AdminResourcePage({
                         </span>
                         {item.is_featured ? (
                           <span className="rounded-md bg-[#eef4f1] px-2 py-1 text-xs font-bold text-[#315c4f]">
-                            Начална
+                            Featured
                           </span>
                         ) : null}
                       </div>
@@ -233,7 +241,7 @@ export function AdminResourcePage({
                       <button
                         type="button"
                         className="focus-ring rounded-md border border-[#d8c7a9] bg-white p-2 text-[#315c4f] transition hover:bg-[#f4ede2]"
-                        aria-label="Редактирай"
+                        aria-label="Edit"
                         onClick={() => startEdit(item)}
                       >
                         <Edit3 className="h-4 w-4" />
@@ -241,7 +249,7 @@ export function AdminResourcePage({
                       <button
                         type="button"
                         className="focus-ring rounded-md border border-red-200 bg-white p-2 text-red-700 transition hover:bg-red-50"
-                        aria-label="Изтрий"
+                        aria-label="Delete"
                         onClick={() => remove(item)}
                       >
                         <Trash2 className="h-4 w-4" />
@@ -252,7 +260,7 @@ export function AdminResourcePage({
               })
             ) : (
               <div className="rounded-lg border border-dashed border-[#d8c7a9] bg-[#fbf8f1] p-8 text-center text-[#66736f]">
-                Няма намерени записи.
+                No records found.
               </div>
             )}
           </div>
@@ -264,7 +272,7 @@ export function AdminResourcePage({
         >
           <div className="mb-5 flex flex-col gap-3 border-b border-[#eadfce] pb-5 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <p className="text-sm font-bold uppercase text-[#bd9560]">{editingId ? 'Редакция' : 'Нов запис'}</p>
+              <p className="text-sm font-bold uppercase text-[#bd9560]">{editingId ? 'Edit record' : 'New record'}</p>
               <h2 className="mt-1 text-2xl font-semibold text-[#173c35]">
                 {editingItem?.name || editingItem?.title || title}
               </h2>
@@ -276,7 +284,7 @@ export function AdminResourcePage({
                 onClick={reset}
               >
                 <X className="h-4 w-4" />
-                Затвори
+                Close
               </button>
             ) : null}
           </div>
@@ -337,7 +345,7 @@ export function AdminResourcePage({
                       <span className="text-xs font-medium text-[#66736f]">{fieldHelp.image}</span>
                       <label className="focus-ring inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border border-[#d8c7a9] bg-[#fbf8f1] px-4 py-3 text-sm font-semibold text-[#173c35] transition hover:bg-[#f4ede2]">
                         <Upload className="h-4 w-4" />
-                        {uploadingField === field.name ? 'Качване...' : 'Качи снимка'}
+                        {uploadingField === field.name ? 'Uploading...' : 'Upload image'}
                         <input
                           className="sr-only"
                           type="file"
@@ -366,10 +374,10 @@ export function AdminResourcePage({
 
           <div className="mt-6 flex flex-wrap gap-3 border-t border-[#eadfce] pt-5">
             <Button type="submit" icon={Save}>
-              Запази
+              Save
             </Button>
             <Button type="button" variant="secondary" onClick={reset}>
-              Нов празен запис
+              New blank record
             </Button>
           </div>
         </form>

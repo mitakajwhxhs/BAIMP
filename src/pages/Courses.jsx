@@ -1,81 +1,59 @@
-import { useMemo, useState } from 'react'
-import { BookingModal } from '../components/BookingModal.jsx'
-import { CourseCard } from '../components/CourseCard.jsx'
-import { EmptyState } from '../components/ui/EmptyState.jsx'
+import { ArrowRight, BookOpen } from 'lucide-react'
+import { Button } from '../components/ui/Button.jsx'
 import { PageHero } from '../components/ui/PageHero.jsx'
-import { SearchField } from '../components/ui/SearchField.jsx'
+import { courseDetails } from '../data/courseDetails.js'
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
-import { useFilteredList } from '../hooks/useFilteredList.js'
-import { useLocalCollection } from '../hooks/useLocalCollection.js'
-import { courses } from '../data/baimpData.js'
-import { useLanguage } from '../i18n/useLanguage.js'
-import { getLocalizedData, localizeItems } from '../i18n/localizedData.js'
 
 export function Courses() {
-  const { language, select } = useLanguage()
-  useDocumentTitle(select('Courses', 'Курсове'))
-  const { items } = useLocalCollection('courses', courses, { remote: false })
-  const localizedData = getLocalizedData(language)
-  const [query, setQuery] = useState('')
-  const [selectedCourse, setSelectedCourse] = useState(null)
-  const published = useMemo(
-    () => localizeItems(items, localizedData.courses, language).filter((course) => course.is_published),
-    [items, language, localizedData.courses],
-  )
-  const filtered = useFilteredList(published, query, ['title', 'summary', 'duration', 'topics'])
+  useDocumentTitle('Courses')
 
   return (
     <>
       <PageHero
-        eyebrow={select('Training', 'Обучение')}
-        title={select('Certified courses for specialists', 'Сертифицирани курсове за специалисти')}
-        text={select(
-          'Programmes in counselling, psychotherapeutic skills and psychopathology with a practical focus.',
-          'Програми за консултиране, психотерапевтични умения и психопатология с практическа насоченост.',
-        )}
-      >
-        <div className="max-w-xl">
-          <SearchField
-            value={query}
-            onChange={setQuery}
-            placeholder={select(
-              'Search by topic, title or duration',
-              'Търсене по тема, заглавие или продължителност',
-            )}
-          />
-        </div>
-      </PageHero>
+        eyebrow="Training"
+        title="Specialized training courses"
+        text="Explore each course below and open its dedicated page for the complete programme, learning outcomes and participant information."
+      />
+
       <section className="section-pad section-finish">
-        <div className="container-page grid gap-8">
-          {filtered.length ? (
-            filtered.map((course) => (
-              <div key={course.id} className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr]">
-                <CourseCard course={course} onQuickBook={setSelectedCourse} />
-                <div className="premium-panel p-6">
-                  <h2 className="text-2xl font-semibold text-[#153b34]">
-                    {select('Main topics', 'Тематични направления')}
+        <div className="container-page grid gap-7">
+          {courseDetails.map((course) => {
+            const content = course.content.en
+
+            return (
+              <article
+                key={course.id}
+                className="premium-panel grid overflow-hidden lg:grid-cols-[0.8fr_1.2fr]"
+              >
+                <div className="flex min-h-64 flex-col justify-between bg-[#153b34] p-7 text-white sm:p-9">
+                  <BookOpen className="h-9 w-9 text-[#d8b77a]" />
+                  <h2 className="mt-12 text-3xl font-semibold leading-tight">
+                    {course.title.en.replace(/^[a-c]\)\s*/i, '')}
                   </h2>
-                  <div className="mt-5 grid gap-3">
-                    {course.topics.map((topic) => (
-                      <p key={topic} className="rounded-md bg-[#ede4d6] px-4 py-3 text-base leading-7 text-[#2f5f55]">
-                        {topic}
-                      </p>
-                    ))}
-                  </div>
-                  <div className="mt-6 grid gap-3 text-base leading-8 text-[#63736d]">
-                    {course.description.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
+                </div>
+
+                <div className="flex flex-col p-7 sm:p-9">
+                  {content.subtitle ? (
+                    <p className="mb-4 text-sm font-bold uppercase tracking-[0.14em] text-[#a9844c]">
+                      {content.subtitle}
+                    </p>
+                  ) : null}
+                  <p className="text-base leading-8 text-[#526760]">{content.intro[0]}</p>
+                  <div className="mt-7">
+                    <Button
+                      to={`/courses/${course.slug}`}
+                      variant="secondary"
+                      icon={ArrowRight}
+                    >
+                      Read full course information
+                    </Button>
                   </div>
                 </div>
-              </div>
-            ))
-          ) : (
-            <EmptyState />
-          )}
+              </article>
+            )
+          })}
         </div>
       </section>
-      <BookingModal open={Boolean(selectedCourse)} onClose={() => setSelectedCourse(null)} course={selectedCourse} />
     </>
   )
 }

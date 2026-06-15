@@ -36,6 +36,7 @@ export function TrainerProfile() {
   const { items } = useLocalCollection('trainers', trainers, {
     remote: false,
     requiredFallbackIds: trainerIds,
+    preferFallbackFields: ['image_url'],
   })
   const trainer = useMemo(
     () =>
@@ -67,7 +68,11 @@ export function TrainerProfile() {
         <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="card-soft hover-lift overflow-hidden">
-              <img src={trainer.image_url} alt={trainer.name} className="image-zoom aspect-[4/5] w-full bg-[#e8dfd2] object-contain" />
+              <img
+                src={trainer.image_url}
+                alt={trainer.name}
+                className="image-zoom aspect-[4/5] w-full bg-[#e8dfd2] object-cover object-top"
+              />
               <div className="p-5">
                 <div className="flex flex-wrap gap-2">
                   {trainer.badges.map((badge) => (

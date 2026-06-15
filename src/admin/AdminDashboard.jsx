@@ -33,14 +33,14 @@ export function AdminDashboard() {
     <div className="grid gap-6">
       <section className="rounded-lg border border-[#eadfce] bg-white p-6">
         <p className="text-sm font-bold uppercase text-[#bd9560]">Dashboard</p>
-        <h1 className="mt-2 text-3xl font-semibold text-[#173c35]">Преглед на сайта</h1>
+        <h1 className="mt-2 text-3xl font-semibold text-[#173c35]">Site overview</h1>
       </section>
       <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-        <Stat icon={Users} label="обучители" value={trainerItems.length} />
-        <Stat icon={BookOpen} label="курсове" value={courseItems.length} />
-        <Stat icon={Newspaper} label="новини" value={newsItems.length} />
-        <Stat icon={CalendarClock} label="pending заявки" value={pending} />
-        <Stat icon={Award} label="сертификати" value={certificateItems.length} />
+        <Stat icon={Users} label="trainers" value={trainerItems.length} />
+        <Stat icon={BookOpen} label="courses" value={courseItems.length} />
+        <Stat icon={Newspaper} label="news items" value={newsItems.length} />
+        <Stat icon={CalendarClock} label="pending requests" value={pending} />
+        <Stat icon={Award} label="certificates" value={certificateItems.length} />
       </section>
     </div>
   )

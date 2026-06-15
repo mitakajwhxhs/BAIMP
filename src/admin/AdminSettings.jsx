@@ -4,12 +4,12 @@ import { useSiteSettings } from '../hooks/useSiteSettings.js'
 import { useToast } from '../hooks/useToast.js'
 
 const contactFields = [
-  { name: 'address', label: 'Адрес' },
-  { name: 'phone', label: 'Телефон' },
+  { name: 'address', label: 'Address' },
+  { name: 'phone', label: 'Phone' },
   { name: 'email', label: 'Email' },
   { name: 'facebook', label: 'Facebook URL' },
   { name: 'instagram', label: 'Instagram URL' },
-  { name: 'mapQuery', label: 'Google Maps търсене' },
+  { name: 'mapQuery', label: 'Google Maps search' },
 ]
 
 function AdminSection({ eyebrow, title, children }) {
@@ -43,39 +43,39 @@ export function AdminSettings() {
 
   const submit = (event) => {
     event.preventDefault()
-    pushToast('Настройките са запазени.')
+    pushToast('Settings saved.')
   }
 
   return (
     <form onSubmit={submit} className="grid gap-6">
       <section className="overflow-hidden rounded-lg border border-[#d8c7a9] bg-white shadow-[0_18px_55px_rgba(23,60,53,0.08)]">
         <div className="bg-[#173c35] px-6 py-5 text-white">
-          <p className="text-sm font-bold uppercase text-[#f1d4a4]">Настройки</p>
-          <h1 className="mt-2 text-3xl font-semibold">Общи настройки на сайта</h1>
+          <p className="text-sm font-bold uppercase text-[#f1d4a4]">Settings</p>
+          <h1 className="mt-2 text-3xl font-semibold">General site settings</h1>
           <p className="mt-3 max-w-3xl text-base leading-7 text-white/75">
-            Тук се редактират основните текстове, контактите, социалните линкове и статистиките в сайта.
+            Edit the main site copy, contact details, social links and statistics.
           </p>
         </div>
       </section>
 
-      <AdminSection eyebrow="Бранд" title="Име и кратко име">
+      <AdminSection eyebrow="Brand" title="Organization name">
         <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-          Име на организацията
+          Organization name
           <input className="field" value={settings.organization} onChange={(event) => update('organization', event.target.value)} />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-          Кратко име
+          Short name
           <input className="field" value={settings.shortName} onChange={(event) => update('shortName', event.target.value)} />
         </label>
       </AdminSection>
 
-      <AdminSection eyebrow="Начална страница" title="Hero секция">
+      <AdminSection eyebrow="Home page" title="Hero section">
         <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-          Основно заглавие
+          Main heading
           <input className="field" value={settings.heroTitle} onChange={(event) => update('heroTitle', event.target.value)} />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-          Описание
+          Description
           <textarea
             className="field min-h-28 resize-y"
             value={settings.heroText}
@@ -84,9 +84,9 @@ export function AdminSettings() {
         </label>
       </AdminSection>
 
-      <AdminSection eyebrow="За нас" title="Текстове за представяне">
+      <AdminSection eyebrow="About us" title="Introductory copy">
         <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-          Кратък водещ текст
+          Short lead
           <textarea
             className="field min-h-24 resize-y"
             value={settings.aboutLead}
@@ -94,7 +94,7 @@ export function AdminSettings() {
           />
         </label>
         <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-          Основен текст
+          Main text
           <textarea
             className="field min-h-32 resize-y"
             value={settings.aboutText}
@@ -103,7 +103,7 @@ export function AdminSettings() {
         </label>
       </AdminSection>
 
-      <AdminSection eyebrow="Контакти" title="Контактна информация и социални мрежи">
+      <AdminSection eyebrow="Contact" title="Contact information and social media">
         <div className="grid gap-4 sm:grid-cols-2">
           {contactFields.map((field) => (
             <label key={field.name} className="grid gap-2 text-sm font-semibold text-[#173c35]">
@@ -118,16 +118,16 @@ export function AdminSettings() {
         </div>
       </AdminSection>
 
-      <AdminSection eyebrow="Начална страница" title="Статистики">
+      <AdminSection eyebrow="Home page" title="Statistics">
         <div className="grid gap-4 sm:grid-cols-2">
           {settings.stats.map((stat, index) => (
             <div key={`${stat.label}-${index}`} className="grid gap-3 rounded-lg border border-[#eadfce] bg-[#fbf8f1] p-4">
               <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-                Стойност
+                Value
                 <input className="field" value={stat.value} onChange={(event) => updateStat(index, 'value', event.target.value)} />
               </label>
               <label className="grid gap-2 text-sm font-semibold text-[#173c35]">
-                Текст
+                Label
                 <input className="field" value={stat.label} onChange={(event) => updateStat(index, 'label', event.target.value)} />
               </label>
             </div>
@@ -137,7 +137,7 @@ export function AdminSettings() {
 
       <div className="sticky bottom-4 flex justify-end">
         <Button type="submit" icon={Save} className="shadow-[0_16px_35px_rgba(23,60,53,0.22)]">
-          Запази настройки
+          Save settings
         </Button>
       </div>
     </form>
