@@ -18,8 +18,8 @@ export const siteContent = {
     mapQuery: 'Flavia Business Park Plovdiv',
   },
   stats: [
-    { label: 'years of professional experience', value: '15+' },
+    { label: 'years of professional experience', value: '3' },
     { label: 'trainers and specialists', value: '18' },
-    { label: 'trained specialists', value: '100+' },
+    { label: 'trained specialists', value: '80+' },
   ],
 }

@@ -28,9 +28,14 @@ const mergeSettings = (saved) => {
         if (
           stat.label === 'professional community' ||
           stat.label === 'people trained' ||
+          stat.label === 'trained specialists' ||
           String(stat.value).toUpperCase() === retiredCommunityValue
         ) {
-          return { label: 'trained specialists', value: '100+' }
+          return { label: 'trained specialists', value: '80+' }
+        }
+
+        if (stat.label === 'years of professional experience') {
+          return { ...stat, value: '3' }
         }
 
         if (

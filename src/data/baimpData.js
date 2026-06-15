@@ -586,7 +586,7 @@ export const whyChooseItems = [
   },
   {
     title: 'Professional framework',
-    text: '100+ trained specialists',
+    text: '80+ trained specialists',
   },
 ]
 
