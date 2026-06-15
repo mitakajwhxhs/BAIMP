@@ -121,6 +121,8 @@ export const traineeProfiles = [
   {
     name: 'Petya Mindalova',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/petya-mindalova.jpg',
+    image_position: '50% 38%',
     paragraphs: [
       'Petya Mindalova is a psychologist with a multidisciplinary professional background that combines nearly 20 years of experience in the field of information technology with a strong commitment to psychology, personal development, and psychological counseling.',
       'She holds a Master\'s degree in Applied Psychology and has completed advanced training in Transactional Analysis and Humanistic Psychology. She has also successfully completed the program “First Steps in Counseling” with the Bulgarian Association for Intermodal Psychotherapy, as well as a postgraduate qualification in Psychotherapy of Childhood and Adolescence at the Medical University of Plovdiv.',
@@ -132,6 +134,8 @@ export const traineeProfiles = [
   {
     name: 'Victoria Georgieva',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/victoria-georgieva.jpg',
+    image_position: '50% 32%',
     paragraphs: [
       'Victoria Georgieva is a psychologist dedicated to supporting individuals in coping with stress, anxiety, and life challenges, while also facilitating deeper self-awareness and personal growth. She works with both individuals and groups, helping people develop greater self-understanding, emotional awareness, and connection with their personal values.',
       'In her practice, Victoria applies an intermodal approach tailored to each person\'s unique needs, strengths, and life circumstances. She believes that every individual possesses inner resources and potential that can be discovered, strengthened, and transformed into meaningful personal development.',
@@ -142,6 +146,8 @@ export const traineeProfiles = [
   {
     name: 'Nevena Drumeva',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/nevena-drumeva.jpg',
+    image_position: '50% 32%',
     paragraphs: [
       'Nevena Drumeva is a psychologist with a Master\'s degree in Positive Psychology and a psychotherapist in training with the Bulgarian Association for Intermodal Psychotherapy (BAIMP). She applies an integrative approach to psychological counseling, combining different therapeutic methods and techniques according to the unique needs of each client.',
       'In her work, she draws on Cognitive Behavioral Therapy (CBT), EMDR, Schema Therapy, Positive Psychology and Psychotherapy, Psychodynamic approaches, and Emotional Freedom Techniques (EFT). Her therapeutic style is focused on creating a safe, supportive, and empathetic environment where clients can explore their difficulties, strengthen their inner resources, and achieve meaningful personal growth.',
@@ -153,6 +159,8 @@ export const traineeProfiles = [
   {
     name: 'Petya Slavcheva',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/petya-slavcheva.jpg',
+    image_position: '50% 25%',
     paragraphs: [
       'Petya Slavcheva is a psychologist with a Master\'s degree in Applied Psychology and specialized training in psychological counseling through the Bulgarian Association for Intermodal Psychotherapy (BAIMP), where she continues her professional development as a psychotherapist in training.',
       'She has completed additional training in the use of associative (OH) cards, as well as specialized programs focused on working with children, parents, and family relationships. Her professional interests are centered on self-esteem, personal growth, interpersonal relationships, parenting, and fostering a deeper connection with oneself.',
@@ -164,6 +172,8 @@ export const traineeProfiles = [
   {
     name: 'Vilizara Lilova',
     title: 'Psychology practitioner and psychotherapist in training',
+    image_url: '/images/trainees/vilizara-lilova.jpg',
+    image_position: '50% 30%',
     paragraphs: [
       'Vilizara Lilova is a psychology practitioner with a professional background in healthcare and a growing specialization in psychological counseling and mental health support. Her career began in the medical field, where she worked as an operating room, anesthesiology, and intensive care nurse, gaining valuable experience in teamwork, empathy, responsibility, and working effectively in high-pressure environments.',
       'Following a significant personal turning point, she redirected her professional path toward psychology and the promotion of mental well-being. She is currently pursuing studies in Applied Psychology and continues to expand her professional knowledge and skills in the field of psychological counseling.',
@@ -175,6 +185,8 @@ export const traineeProfiles = [
   {
     name: 'Gabriela Ivanova',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/gabriela-ivanova.jpg',
+    image_position: '50% 28%',
     paragraphs: [
       'Gabriela Ivanova is a psychologist with a Bachelor\'s degree in Psychology and a Master\'s degree in Applied Psychology. In her professional practice, she is guided by the belief that every individual deserves a safe and supportive space where they can feel accepted, understood, and free to be themselves.',
       'She has participated in a variety of professional seminars and training programs, including hypnosis, emotional eating, and other specialized areas of psychological practice. She has completed the programs “Foundations of Psychological Counseling” and “Foundations of Psychotherapeutic Skills” with the Bulgarian Association for Intermodal Psychotherapy (BAIMP).',
@@ -186,6 +198,8 @@ export const traineeProfiles = [
   {
     name: 'Venelina Pepelova',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/venelina-pepelova.jpg',
+    image_position: '50% 20%',
     paragraphs: [
       'Venelina Pepelova is a psychologist with professional experience in the fields of education, school psychology, and administrative management. Following a long-standing career in accounting and financial administration, she redirected her professional path toward psychology and supporting individuals within educational and social settings.',
       'She holds a Master\'s degree in School Psychology from Paisii Hilendarski University of Plovdiv. Her academic background also includes studies in accounting, financial analysis, and business management, which have contributed to her strong analytical thinking, organizational skills, and ability to work effectively in dynamic environments.',
@@ -197,6 +211,8 @@ export const traineeProfiles = [
   {
     name: 'Nadezhda Atanasova',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/nadezhda-atanasova.jpg',
+    image_position: '50% 35%',
     paragraphs: [
       'Nadezhda Atanasova is a psychologist and psychotherapist in training with the Bulgarian Association for Intermodal Psychotherapy (BAIMP). She holds a degree in Psychology from Paisii Hilendarski University of Plovdiv and has completed the “Foundations of Psychological Counseling” training program at BAIMP, where she continues her professional development at a therapeutic level.',
       'She works with clients both in person in Plovdiv and online. Her professional interests focus on trauma-related experiences, self-connection, personal growth, and existential themes concerning meaning, identity, and authenticity.',
@@ -207,6 +223,8 @@ export const traineeProfiles = [
   {
     name: 'Katya Mitsina',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/katya-mitsina.jpg',
+    image_position: '50% 45%',
     paragraphs: [
       'Katya Mitsina is a psychologist holding a Master\'s degree in Applied Psychology from Paisii Hilendarski University of Plovdiv and a postgraduate qualification as a Health Consultant from New Bulgarian University. Her professional approach combines psychological expertise with a holistic understanding of personal well-being and human development.',
       'She has completed the programs “Foundations of Psychological Counseling” and “Foundations of Psychotherapeutic Skills” with the Bulgarian Association for Intermodal Psychotherapy (BAIMP), as well as additional specialized training courses supporting her ongoing professional development in psychological counseling and psychotherapy.',
@@ -217,9 +235,11 @@ export const traineeProfiles = [
   {
     name: 'Malina Doneva',
     title: 'Psychological counselor and psychotherapist in training',
+    image_url: '/images/trainees/malina-doneva.jpg',
+    image_position: '50% 25%',
     paragraphs: [
       'Malina Doneva is a psychological counselor, educator, and holder of a Master\'s degree in Positive Psychology. Alongside her professional experience in business management and leadership, she has developed a strong interest in psychological counseling, personal development, and supporting individuals affected by addiction-related challenges.',
-      'She has completed professional training with the Bulgarian Association for Intermodal Psychotherapy (BAIMP), as well as specialized training in Addictive Psychotherapy through the Bulgarian Association for Addiction Psychotherapy (BAAP) and the European Association for Addiction Research. She has also completed training inspired by the Internal Family Systems (IFS) model, a hypnosis training program with the Bulgarian Association of Hypnosis and Hypnotherapy (BAHH), and more than 200 hours of personal development and psychodrama experience at Ariadna Psychodrama Center.',
+      'She has completed professional training with the Bulgarian Association for Intermodal Psychotherapy (BAIMP), as well as specialized training in Addictive Psychotherapy through the Bulgarian Association for Addiction Psychotherapy (BAAP). She has also completed training inspired by the Internal Family Systems (IFS) model, a hypnosis training program with the Bulgarian Association of Hypnosis and Hypnotherapy (BAHH), and more than 200 hours of personal development and psychodrama experience at Ariadna Psychodrama Center.',
       'Her professional focus is on supporting family members and loved ones of individuals struggling with addiction, helping clients address codependency, guilt, anxiety, emotional burnout, and relationship difficulties. She has a particular interest in healthy boundary setting, emotional resilience, and personal empowerment.',
       'In her work, Malina creates a safe, supportive, and non-judgmental environment where clients can feel heard, understood, and accepted. She believes that the relatives of people affected by addiction need not only information and guidance but also a space for reflection, healing, and personal growth.',
     ],
@@ -227,6 +247,8 @@ export const traineeProfiles = [
   {
     name: 'Nadezhda Peleva',
     title: 'Psychologist and psychotherapist in training',
+    image_url: '/images/trainees/nadezhda-peleva.jpg',
+    image_position: '50% 32%',
     paragraphs: [
       'Nadezhda Peleva is a psychologist holding a Bachelor\'s degree in Psychology and a Master\'s degree in Applied Psychology, with additional training in Cognitive Behavioral Therapy (CBT). She has also completed professional training in Hypnosis and Hypnotherapy through the Bulgarian Association of Hypnosis and Hypnotherapy (BAHH), as well as specialized training with the Bulgarian Association for Intermodal Psychotherapy (BAIMP).',
       'Her professional interests are focused on psychological counseling, integrative therapeutic approaches, personal development, and the promotion of mental well-being. In her work, she applies an individualized approach that combines evidence-based methods with respect for each client\'s unique personality, experiences, and needs.',

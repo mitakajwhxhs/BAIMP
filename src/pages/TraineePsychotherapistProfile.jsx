@@ -38,9 +38,18 @@ export function TraineePsychotherapistProfile() {
         <div className="container-page grid gap-8 lg:grid-cols-[0.68fr_1.32fr]">
           <aside className="lg:sticky lg:top-28 lg:self-start">
             <div className="card-soft p-7 text-center">
-              <span className="mx-auto flex h-32 w-32 items-center justify-center rounded-full bg-[#153b34] text-4xl font-bold text-white shadow-[0_18px_45px_rgba(21,59,52,0.2)]">
-                {getInitials(profile.name)}
-              </span>
+              {profile.image_url ? (
+                <img
+                  src={profile.image_url}
+                  alt={profile.name}
+                  className="mx-auto aspect-[4/5] w-full max-w-60 rounded-lg border border-[#e2d5bf] object-cover shadow-[0_18px_45px_rgba(21,59,52,0.2)]"
+                  style={{ objectPosition: profile.image_position }}
+                />
+              ) : (
+                <span className="mx-auto flex aspect-[4/5] w-full max-w-60 items-center justify-center rounded-lg bg-[#153b34] text-4xl font-bold text-white shadow-[0_18px_45px_rgba(21,59,52,0.2)]">
+                  {getInitials(profile.name)}
+                </span>
+              )}
               <h2 className="mt-6 text-2xl font-semibold text-[#153b34]">{profile.name}</h2>
               <p className="mt-3 text-base leading-7 text-[#63736d]">{profile.title}</p>
               <div className="mt-6 flex items-center justify-center gap-2 border-t border-[#e2d5bf] pt-5 text-sm font-semibold text-[#2f5f55]">

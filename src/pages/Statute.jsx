@@ -27,10 +27,7 @@ const chapters = [
           {
             text: 'The registered address of the Association is:',
             lines: [
-              'Bulgaria, Plovdiv, 4000',
-              'Southern Industrial Zone - South',
-              '179 Tsar Boris III Obedinitel Blvd.',
-              'Flavia Business Centre, 2nd floor',
+              'Plovdiv, Flavia Business Park',
             ],
           },
         ],
@@ -47,7 +44,7 @@ const chapters = [
         items: [
           `The mission of BAIMP is to promote, develop and maintain high professional standards in the training and practice of intermodal and integrative psychotherapy in Bulgaria.`,
           `BAIMP supports the development of integrative psychotherapy as a scientifically informed, ethically grounded and clinically responsible professional field.`,
-          `The Association seeks to align its training standards, ethical principles and professional procedures with the standards and aims of the European Association for Integrative Psychotherapy (EAIP) and the broader European framework for psychotherapy training.`,
+          `The Association maintains clear training standards, ethical principles and professional procedures informed by established good practice in psychotherapy training.`,
         ],
       },
       {
@@ -62,7 +59,7 @@ const chapters = [
           `To support research, publications, conferences, seminars and educational initiatives in the field of psychotherapy, counselling, psychology and mental health.`,
           `To protect the professional interests of its members while safeguarding the rights, dignity and welfare of clients and service users.`,
           `To cooperate with national and international organisations in the field of psychotherapy, psychology, counselling, supervision, mental health and professional education.`,
-          `To support the development of integrative psychotherapy training in Bulgaria in accordance with European standards.`,
+          `To support the development of integrative psychotherapy training in Bulgaria in accordance with established professional standards.`,
         ],
       },
     ],
@@ -246,7 +243,7 @@ const chapters = [
         items: [
           `BAIMP develops and maintains training programmes in intermodal and integrative psychotherapy.`,
           `Training programmes are organised in accordance with written curricula, defined learning outcomes, assessment procedures and ethical requirements.`,
-          `The Association seeks to align its psychotherapy training with the standards of EAIP and the broader European framework for psychotherapy education.`,
+          `The Association keeps its psychotherapy training aligned with established professional and educational good practice.`,
           `The Association maintains documentation of training hours, clinical practice, supervision, personal therapy / self-experience and assessment procedures.`,
         ],
       },
@@ -280,7 +277,7 @@ const chapters = [
         items: [
           `The Association adopts a Code of Ethics and Professional Practice that is binding for members, trainees, trainers, supervisors and all persons acting on behalf of BAIMP.`,
           `The Code of Ethics defines principles of confidentiality, competence, professional responsibility, informed consent, boundaries, avoidance of dual relationships, non-discrimination and respect for clients' dignity and rights.`,
-          `The ethical framework of BAIMP is developed in alignment with European ethical principles in psychotherapy and with the professional objectives of EAIP.`,
+          `The ethical framework of BAIMP is developed in alignment with established ethical principles in psychotherapy.`,
         ],
       },
       {

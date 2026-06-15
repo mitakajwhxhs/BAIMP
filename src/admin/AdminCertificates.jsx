@@ -13,12 +13,13 @@ const fields = [
 export function AdminCertificates() {
   return (
     <AdminResourcePage
-      title="Certificates and accreditations"
-      description="Manage certificates, accreditations, images and validity."
+      title="BAIMP certificates"
+      description="Manage certificates issued for BAIMP training programmes."
       table="certificates"
       fallback={certificates}
       fields={fields}
       imageBucket="certificates"
+      collectionOptions={{ preferFallbackFields: ['image_url', 'issuer'] }}
     />
   )
 }

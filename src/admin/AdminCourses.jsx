@@ -26,6 +26,7 @@ export function AdminCourses() {
       fallback={courses}
       fields={fields}
       imageBucket="course-assets"
+      collectionOptions={{ preferFallbackFields: ['image_url', 'certificate'] }}
     />
   )
 }

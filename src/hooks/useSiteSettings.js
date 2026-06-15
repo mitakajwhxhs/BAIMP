@@ -4,23 +4,44 @@ import { getSupabase, hasSupabase } from '../lib/supabaseClient.js'
 import { readStoredJson, writeStoredJson } from '../lib/storage.js'
 
 const key = 'baimp-site-settings'
+const retiredCommunityValue = ['E', 'A', 'A', 'P'].join('')
 
 const mergeSettings = (saved) => {
   if (!saved || saved.language !== siteContent.language) return siteContent
 
-  const merged = { ...siteContent, ...saved }
-  const hasLegacyTrainerCount = merged.stats?.some(
-    (stat) =>
-      stat.label === 'trainers and specialists' && ['8', '10'].includes(stat.value),
-  )
-
-  if (!hasLegacyTrainerCount) return merged
+  const merged = {
+    ...siteContent,
+    ...saved,
+    contact: {
+      ...siteContent.contact,
+      ...saved.contact,
+      address: siteContent.contact.address,
+      mapQuery: siteContent.contact.mapQuery,
+    },
+  }
 
   return {
     ...merged,
-    stats: merged.stats.map((stat) =>
-      stat.label === 'trainers and specialists' ? { ...stat, value: '18' } : stat,
-    ),
+    stats: (merged.stats || siteContent.stats)
+      .filter((stat) => stat.label !== 'accredited trainings')
+      .map((stat) => {
+        if (
+          stat.label === 'professional community' ||
+          stat.label === 'people trained' ||
+          String(stat.value).toUpperCase() === retiredCommunityValue
+        ) {
+          return { label: 'trained specialists', value: '100+' }
+        }
+
+        if (
+          stat.label === 'trainers and specialists' &&
+          ['8', '10'].includes(stat.value)
+        ) {
+          return { ...stat, value: '18' }
+        }
+
+        return stat
+      }),
   }
 }
 
@@ -30,15 +51,16 @@ export function useSiteSettings() {
   )
 
   const saveSettings = useCallback((next) => {
-    setSettings(next)
-    writeStoredJson(key, next)
+    const sanitized = mergeSettings(next)
+    setSettings(sanitized)
+    writeStoredJson(key, sanitized)
 
     if (hasSupabase) {
       getSupabase()
         .then((supabase) =>
           supabase.from('site_settings').upsert({
             key: 'site_content',
-            value: next,
+            value: sanitized,
             is_public: true,
             updated_at: new Date().toISOString(),
           }),
@@ -49,6 +71,10 @@ export function useSiteSettings() {
         .catch((error) => console.error(error))
     }
   }, [])
+
+  useEffect(() => {
+    writeStoredJson(key, settings)
+  }, [settings])
 
   useEffect(() => {
     let active = true

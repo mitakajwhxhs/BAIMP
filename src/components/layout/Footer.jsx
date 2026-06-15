@@ -64,9 +64,9 @@ export function Footer() {
                 className="focus-ring rounded-md border border-white/15 p-2 transition duration-300 hover:-translate-y-0.5 hover:bg-white/10"
                 href={contact.facebook}
                 target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              title="Facebook"
+                rel="noreferrer"
+                aria-label="Facebook"
+                title="Facebook"
               >
                 <FacebookIcon className="h-5 w-5" />
               </a>

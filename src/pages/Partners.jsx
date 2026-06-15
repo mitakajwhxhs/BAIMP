@@ -4,14 +4,17 @@ import { Button } from '../components/ui/Button.jsx'
 import { MotionSection } from '../components/ui/MotionSection.jsx'
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
 import { useLocalCollection } from '../hooks/useLocalCollection.js'
-import { partners } from '../data/baimpData.js'
+import { partners, retiredPartnerIds } from '../data/baimpData.js'
 import { useLanguage } from '../i18n/useLanguage.js'
 import { getLocalizedData, localizeItems } from '../i18n/localizedData.js'
 
 export function Partners() {
   const { language, select } = useLanguage()
   useDocumentTitle(select('Partners', 'Партньори'))
-  const { items } = useLocalCollection('partners', partners, { remote: false })
+  const { items } = useLocalCollection('partners', partners, {
+    remote: false,
+    removedIds: retiredPartnerIds,
+  })
   const localizedData = getLocalizedData(language)
   const localizedItems = localizeItems(items, localizedData.partners, language)
 

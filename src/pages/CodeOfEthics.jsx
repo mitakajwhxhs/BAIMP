@@ -16,7 +16,7 @@ const chapters = [
           `This Code of Ethics and Professional Practice defines the ethical principles, professional responsibilities and standards of conduct applicable within the Bulgarian Association for Intermodal Psychotherapy (BAIMP).`,
           `The Code applies to members, trainees, trainers, supervisors, personal therapists, assessors, committee members and all persons acting on behalf of BAIMP.`,
           `The purpose of the Code is to protect clients, trainees, members, supervisees and the public, and to promote ethical, responsible and competent psychotherapeutic practice.`,
-          `This Code is developed in alignment with European ethical principles in psychotherapy and with the aims and professional standards of the European Association for Integrative Psychotherapy (EAIP), while remaining subject to the laws and professional requirements applicable in the Republic of Bulgaria.`,
+          `This Code is developed in alignment with established ethical principles in psychotherapy, while remaining subject to the laws and professional requirements applicable in the Republic of Bulgaria.`,
         ],
       },
       {
@@ -384,7 +384,7 @@ const chapters = [
         title: 'External Reporting',
         items: [
           `Serious matters may be reported to external authorities or professional bodies where required by law, ethical responsibility or relevant professional procedures.`,
-          `Reporting to EAIP or another professional organisation may occur only when appropriate, proportionate and consistent with the applicable rules, confidentiality requirements and legal obligations.`,
+          `Reporting to an appropriate professional organisation may occur only when proportionate and consistent with applicable rules, confidentiality requirements and legal obligations.`,
         ],
       },
     ],

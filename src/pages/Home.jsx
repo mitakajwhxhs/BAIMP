@@ -55,11 +55,14 @@ export function Home() {
       </section>
 
       <section className="section-paper border-y border-[#ded3c4]/70 backdrop-blur">
-        <div className="container-page grid gap-4 py-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="container-page grid gap-3 py-6 sm:grid-cols-3 sm:gap-4 sm:py-8">
           {settings.stats.map((stat) => (
-            <div key={stat.label} className="hover-lift rounded-lg border border-[#e5dac8] bg-[#fbf8f1] p-5 shadow-[0_12px_30px_rgba(21,59,52,0.06)]">
-              <p className="text-3xl font-semibold text-[#153b34]">{stat.value}</p>
-              <p className="mt-2 text-sm font-semibold text-[#63736d]">{stat.label}</p>
+            <div
+              key={stat.label}
+              className="hover-lift flex min-h-28 flex-col items-center justify-center rounded-lg border border-[#e5dac8] bg-[#fbf8f1] p-4 text-center shadow-[0_12px_30px_rgba(21,59,52,0.06)] sm:min-h-32 sm:p-5"
+            >
+              <p className="text-3xl font-semibold text-[#153b34] sm:text-4xl">{stat.value}</p>
+              <p className="mt-2 text-sm font-semibold leading-5 text-[#63736d]">{stat.label}</p>
             </div>
           ))}
         </div>

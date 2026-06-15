@@ -1,5 +1,5 @@
 import { AdminResourcePage } from './AdminResourcePage.jsx'
-import { partners } from '../data/baimpData.js'
+import { partners, retiredPartnerIds } from '../data/baimpData.js'
 
 const fields = [
   { name: 'name', label: 'Name' },
@@ -18,6 +18,7 @@ export function AdminPartners() {
       table="partners"
       fallback={partners}
       fields={fields}
+      collectionOptions={{ removedIds: retiredPartnerIds }}
     />
   )
 }

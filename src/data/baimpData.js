@@ -88,7 +88,7 @@ const originalTrainers = [
     city: 'Plovdiv',
     image_url: '/images/trainers/asen-beshkov.webp',
     specialties: ['Psychiatry', 'Addictions', 'Cross-cultural psychiatry', 'Psychopathology'],
-    badges: ['medical doctor', 'psychiatrist', 'lecturer', 'EAAP training'],
+    badges: ['medical doctor', 'psychiatrist', 'lecturer', 'professional training'],
     short_bio:
       'Psychiatrist and university lecturer with clinical, research and teaching experience in psychiatry and psychopathology.',
     bio: [
@@ -404,13 +404,13 @@ export const courses = [
     eyebrow: 'Practical training course',
     duration: '15 months',
     format: 'two consecutive levels',
-    certificate: 'Certificate issued by BAIMP and recognized by EAAP',
-    image_url: '/images/certificates/accreditation-counselling.webp',
+    certificate: 'Certificate issued by BAIMP',
+    image_url: '/images/baimp-logo.webp',
     summary:
-      'A certified programme under the standards of the European Association of Applied Psychology, designed for psychologists, psychology students, educators, social and medical specialists.',
+      'A certified programme designed for psychologists, psychology students, educators, social and medical specialists.',
     description: [
       'The programme is structured in two consecutive levels: a 4-month introductory stage and an 11-month counselling stage, with the option of certification after each part.',
-      'Completion of the full programme provides the right to membership in the European Association of Applied Psychology.',
+      'Completion of the full programme documents the acquired counselling knowledge and practical skills.',
       'The training combines theory, practice and supervision in an environment that supports personal growth and professional competence.',
     ],
     topics: [
@@ -436,12 +436,12 @@ export const courses = [
     eyebrow: 'Practical training course',
     duration: '7 months',
     format: 'practical training',
-    certificate: 'Certificate issued by BAIMP and EAAP',
-    image_url: '/images/certificates/accreditation-psychotherapy.webp',
+    certificate: 'Certificate issued by BAIMP',
+    image_url: '/images/baimp-logo.webp',
     summary:
       'A certified programme for psychologists, psychotherapists, consultants, educators, medical specialists and professionals in helping professions.',
     description: [
-      'The training Essentials of Intermodal Psychotherapy is a certified programme within the European Association of Applied Psychology.',
+      'The training Essentials of Intermodal Psychotherapy is a certified programme delivered by BAIMP.',
       'The programme offers an in-depth immersion in the main modalities of psychotherapy, united in an intermodal approach that combines theory and practice.',
       'It develops skills for flexibility, awareness and creative integration of therapeutic methods according to the individual needs of the client.',
     ],
@@ -465,8 +465,8 @@ export const courses = [
     eyebrow: 'Practical training course',
     duration: '1 weekend',
     format: 'intensive two-day course',
-    certificate: 'Certificate issued by BAIMP and recognized by EAAP',
-    image_url: '/images/certificates/accreditation-psychopathology.webp',
+    certificate: 'Certificate issued by BAIMP',
+    image_url: '/images/baimp-logo.webp',
     summary:
       'An intensive two-day specialized course for psychologists, psychotherapists and specialists working with mental vulnerability and personality difficulties.',
     description: [
@@ -486,16 +486,9 @@ export const courses = [
 
 export const news = []
 
+export const retiredPartnerIds = [['e', 'a', 'a', 'p'].join('')]
+
 export const partners = [
-  {
-    id: 'eaap',
-    name: 'European Association of Applied Psychology',
-    type: 'Accreditation and professional recognition',
-    description: 'BAIMP trainings are presented with certificates and recognition from EAAP.',
-    website: 'https://eaap.eu',
-    is_published: true,
-    sort_order: 1,
-  },
   {
     id: 'baimp-community',
     name: 'BAIMP professional community',
@@ -504,7 +497,7 @@ export const partners = [
       'A community of specialists who develop the intermodal approach through trainings, seminars and professional support.',
     website: 'https://baimp.org',
     is_published: true,
-    sort_order: 2,
+    sort_order: 1,
   },
 ]
 
@@ -512,27 +505,27 @@ export const certificates = [
   {
     id: 'certificate-counselling',
     title: 'Introduction to Psychological Counselling',
-    issuer: 'European Association of Applied Psychology',
+    issuer: 'Bulgarian Association for Intermodal Psychotherapy',
     valid_until: '21.11.2026',
-    image_url: '/images/certificates/accreditation-counselling.webp',
+    image_url: '/images/baimp-logo.webp',
     is_published: true,
     sort_order: 1,
   },
   {
     id: 'certificate-psychotherapy',
     title: 'Essentials of Intermodal Psychotherapy',
-    issuer: 'European Association of Applied Psychology',
+    issuer: 'Bulgarian Association for Intermodal Psychotherapy',
     valid_until: '10.04.2028',
-    image_url: '/images/certificates/accreditation-psychotherapy.webp',
+    image_url: '/images/baimp-logo.webp',
     is_published: true,
     sort_order: 2,
   },
   {
     id: 'certificate-psychopathology',
     title: 'General Psychopathology and Personality Disorders',
-    issuer: 'European Association of Applied Psychology',
+    issuer: 'Bulgarian Association for Intermodal Psychotherapy',
     valid_until: '07.07.2028',
-    image_url: '/images/certificates/accreditation-psychopathology.webp',
+    image_url: '/images/baimp-logo.webp',
     is_published: true,
     sort_order: 3,
   },
@@ -568,7 +561,7 @@ export const faqItems = [
   {
     question: 'Is a certificate issued?',
     answer:
-      'Yes. After successful completion, participants receive a certificate issued by the Bulgarian Association for Intermodal Psychotherapy, with recognition from the European Association of Applied Psychology according to the specific programme.',
+      'Yes. After successful completion, participants receive a certificate issued by the Bulgarian Association for Intermodal Psychotherapy according to the specific programme.',
   },
   {
     question: 'Can I apply online?',
@@ -578,7 +571,7 @@ export const faqItems = [
   {
     question: 'Where do meetings and trainings take place?',
     answer:
-      'The BAIMP contact address is Plovdiv, Flavia Business Park, floor 2. For specific trainings and individual meetings, the team confirms the details after a request.',
+      'The BAIMP contact address is in Plovdiv, Flavia Business Park. Specific training locations and meeting details are provided individually.',
   },
 ]
 

@@ -8,9 +8,9 @@ const programmeContent = {
   en: {
     title: 'Training Standards and Programme Structure',
     hero:
-      'A four-year professional training programme in integrative psychotherapy, aligned with the training standards of EAIP and EAP.',
+      'A four-year professional training programme in integrative psychotherapy, structured according to BAIMP professional and ethical requirements.',
     intro: [
-      'The training programme of the Bulgarian Association for Intermodal Psychotherapy (BAIMP) is a four-year professional training programme in integrative psychotherapy. The programme is designed to be aligned with the training standards of the European Association for Integrative Psychotherapy (EAIP) and the European Association for Psychotherapy (EAP). It includes structured theoretical training, practical skills development, supervised clinical practice, personal therapy / self-experience, supervision, and final integrative assessment.',
+      'The training programme of the Bulgarian Association for Intermodal Psychotherapy (BAIMP) is a four-year professional training programme in integrative psychotherapy. It includes structured theoretical training, practical skills development, supervised clinical practice, personal therapy / self-experience, supervision, and final integrative assessment.',
       'The total duration of the programme is four years, or 48 months, with a total of 1,530 training and professionally applied hours. During the first three years, trainees complete 34 taught modules of 20 hours each, amounting to 680 hours of structured training. These modules include theory, methodology, clinical demonstrations, practical exercises, case-based learning and integrative case formulation.',
     ],
     duration: '48 months',
@@ -66,15 +66,15 @@ const programmeContent = {
     completionTitle: 'Completion',
     completion: [
       'The programme concludes with a Final Integrative Assessment, including a theoretical component, an oral practical component and the defence of clinical work. Successful completion leads to an internal BAIMP certificate for completed training.',
-      'This certificate does not constitute automatic individual certification by EAIP, EAP or any other European organisation. Individual European certification follows the separate procedures and criteria of the respective professional organisations.',
+      'The certificate is issued by BAIMP and confirms successful completion of the association\'s training programme.',
     ],
   },
   bg: {
     title: 'Стандарти и структура на обучителната програма',
     hero:
-      'Четиригодишна професионална програма по интегративна психотерапия, съобразена с обучителните стандарти на EAIP и EAP.',
+      'Четиригодишна професионална програма по интегративна психотерапия, структурирана според професионалните и етичните изисквания на БАИМП.',
     intro: [
-      'Обучителната програма на Българската асоциация по интермодална психотерапия представлява четиригодишно професионално обучение по интегративна психотерапия. Програмата е разработена в съответствие с обучителните стандарти на European Association for Integrative Psychotherapy (EAIP) и European Association for Psychotherapy (EAP), като включва структурирано теоретично обучение, практически умения, клинична практика под супервизия, личен терапевтичен опит и финално интегративно оценяване.',
+      'Обучителната програма на Българската асоциация по интермодална психотерапия представлява четиригодишно професионално обучение по интегративна психотерапия. Тя включва структурирано теоретично обучение, практически умения, клинична практика под супервизия, личен терапевтичен опит и финално интегративно оценяване.',
       'Общата продължителност на програмата е 4 години, или 48 месеца, с общ обем от 1530 учебни и професионално-приложни часа. През първите три години обучаемите преминават през 34 модула по 20 часа, общо 680 часа структурирано обучение. Модулите включват теория, методология, демонстрации, практически упражнения, работа по случаи и интегративна формулировка.',
     ],
     duration: '48 месеца',
@@ -130,7 +130,7 @@ const programmeContent = {
     completionTitle: 'Завършване',
     completion: [
       'Програмата завършва с финално интегративно оценяване, което включва теоретичен компонент, практически устен компонент и защита на клинична работа. Успешното завършване води до вътрешен сертификат на БАИМП за завършено обучение.',
-      'Този сертификат не представлява автоматична индивидуална сертификация от EAIP, EAP или друга европейска организация; индивидуалното европейско сертифициране се извършва по отделните процедури и критерии на съответните професионални организации.',
+      'Сертификатът се издава от БАИМП и удостоверява успешното завършване на обучителната програма на асоциацията.',
     ],
   },
 }

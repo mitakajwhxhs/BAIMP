@@ -10,7 +10,7 @@ export const siteContent = {
   aboutText:
     'Through trainings, seminars and workshops, we provide specialists and people seeking support with knowledge, skills and resources. At BAIMP you can find like-minded professionals, professional support and an environment that encourages confidence, creativity and responsible practice.',
   contact: {
-    address: 'Plovdiv, Flavia Business Park, floor 2',
+    address: 'Plovdiv, Flavia Business Park',
     phone: '+359 877 356 891',
     email: 'info@baimp.org',
     facebook: 'https://www.facebook.com/BulgarianAssociationOfIntermodalPsychotherapy',
@@ -20,6 +20,6 @@ export const siteContent = {
   stats: [
     { label: 'years of professional experience', value: '15+' },
     { label: 'trainers and specialists', value: '18' },
-    { label: 'professional community', value: 'EAAP' },
+    { label: 'trained specialists', value: '100+' },
   ],
 }

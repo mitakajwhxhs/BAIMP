@@ -144,7 +144,7 @@ export function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.24, ease: 'easeOut' }}
-            className="border-t border-[#e5dac8] bg-[#fbf8f1]/97 shadow-[0_22px_45px_rgba(21,59,52,0.08)] backdrop-blur-xl xl:hidden"
+            className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-[#e5dac8] bg-[#fbf8f1]/97 shadow-[0_22px_45px_rgba(21,59,52,0.08)] backdrop-blur-xl xl:hidden"
           >
             <div className="container-page grid gap-3 py-5">
               {navItems.map((item) =>

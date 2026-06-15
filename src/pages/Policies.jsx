@@ -1,4 +1,5 @@
 import { Cookie, Database, LockKeyhole, Mail, Scale, ShieldCheck, UserCheck } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { PageHero } from '../components/ui/PageHero.jsx'
 import { MotionSection } from '../components/ui/MotionSection.jsx'
 import { useDocumentTitle } from '../hooks/useDocumentTitle.js'
@@ -64,10 +65,17 @@ export function PrivacyPolicy() {
             </p>
             <p>
               {select('You can contact BAIMP at', 'Можете да се свържете с БАИМП на')}{' '}
-              <a className="font-semibold text-[#2f5f55] underline" href={`mailto:${contact.email}`}>{contact.email}</a>,
-              {' '}{select('by phone at', 'на телефон')}{' '}
-              <a className="font-semibold text-[#2f5f55] underline" href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>,
-              {' '}{select('or at', 'или на адрес')} {contact.address}.
+              <a className="font-semibold text-[#2f5f55] underline" href={`mailto:${contact.email}`}>
+                {contact.email}
+              </a>
+              , {select('by phone at', 'на телефон')}{' '}
+              <a
+                className="font-semibold text-[#2f5f55] underline"
+                href={`tel:${contact.phone.replace(/\s/g, '')}`}
+              >
+                {contact.phone}
+              </a>
+              , {select('or at', 'или на адрес')} {contact.address}.
             </p>
           </PolicyBlock>
 
@@ -193,8 +201,13 @@ export function PrivacyPolicy() {
               ]}
             />
             <p>
-              {select('To exercise a right, contact', 'За да упражните свое право, свържете се на')}{' '}
-              <a className="font-semibold text-[#2f5f55] underline" href={`mailto:${contact.email}`}>{contact.email}</a>.
+              {select(
+                'To exercise a right, submit a request through the',
+                'За да упражните свое право, изпратете заявка чрез',
+              )}{' '}
+              <Link className="font-semibold text-[#2f5f55] underline" to="/contact">
+                {select('contact page', 'страницата за контакти')}
+              </Link>.
               {' '}{select(
                 'BAIMP may need to verify your identity before completing a request.',
                 'БАИМП може да поиска потвърждение на самоличността Ви преди изпълнение на заявката.',

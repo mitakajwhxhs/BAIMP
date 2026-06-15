@@ -9,12 +9,16 @@ const mergeRequiredFallback = (
   fallback,
   requiredIds = [],
   preferFallbackFields = [],
+  removedIds = [],
 ) => {
   if (!Array.isArray(items)) return items
 
+  const retainedItems = removedIds.length
+    ? items.filter((item) => !removedIds.includes(item.id))
+    : items
   const fallbackById = new Map(fallback.map((item) => [item.id, item]))
   const mergedItems = preferFallbackFields.length
-    ? items.map((item) => {
+    ? retainedItems.map((item) => {
         const fallbackItem = fallbackById.get(item.id)
         if (!fallbackItem) return item
 
@@ -26,7 +30,7 @@ const mergeRequiredFallback = (
 
         return { ...item, ...preferredValues }
       })
-    : items
+    : retainedItems
 
   if (!requiredIds.length) return mergedItems
 
@@ -44,6 +48,7 @@ export function useLocalCollection(table, fallback = [], options = {}) {
   const skipRemoteLoad = Boolean(options.skipRemoteLoad)
   const requiredFallbackIdsKey = (options.requiredFallbackIds || []).join('\u0000')
   const preferFallbackFieldsKey = (options.preferFallbackFields || []).join('\u0000')
+  const removedIdsKey = (options.removedIds || []).join('\u0000')
   const [items, setItems] = useState(() => {
     const stored = readStoredJson(storageKey(table), fallback)
     return mergeRequiredFallback(
@@ -51,6 +56,7 @@ export function useLocalCollection(table, fallback = [], options = {}) {
       fallback,
       options.requiredFallbackIds,
       options.preferFallbackFields,
+      options.removedIds,
     )
   })
   const [loading, setLoading] = useState(Boolean(remote))
@@ -83,6 +89,7 @@ export function useLocalCollection(table, fallback = [], options = {}) {
             fallback,
             requiredFallbackIdsKey ? requiredFallbackIdsKey.split('\u0000') : [],
             preferFallbackFieldsKey ? preferFallbackFieldsKey.split('\u0000') : [],
+            removedIdsKey ? removedIdsKey.split('\u0000') : [],
           ),
         )
       }
@@ -99,6 +106,7 @@ export function useLocalCollection(table, fallback = [], options = {}) {
     preferFallbackFieldsKey,
     requiredFallbackIdsKey,
     remote,
+    removedIdsKey,
     skipRemoteLoad,
     table,
   ])

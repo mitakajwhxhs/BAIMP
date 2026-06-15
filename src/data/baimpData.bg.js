@@ -11,7 +11,7 @@ export const siteContent = {
   aboutText:
     'Чрез обучения, семинари и тренинги предоставяме на специалисти и на хора, които търсят подкрепа, знания, умения и ресурси. При нас може да откриете съмишленици, професионална подкрепа и среда, която насърчава увереността, творческия подход и отговорната практика.',
   contact: {
-    address: 'гр. Пловдив, Флавия Бизнес Парк, ет. 2',
+    address: 'гр. Пловдив, Флавия Бизнес Парк',
     phone: '+359 877 356 891',
     email: 'info@baimp.org',
     facebook: 'https://www.facebook.com/BulgarianAssociationOfIntermodalPsychotherapy',
@@ -21,8 +21,7 @@ export const siteContent = {
   stats: [
     { label: 'години професионален опит', value: '15+' },
     { label: 'обучители и специалисти', value: '18' },
-    { label: 'акредитирани обучения', value: '3' },
-    { label: 'професионална общност', value: 'EAAP' },
+    { label: 'обучени специалисти', value: '100+' },
   ],
 }
 
@@ -109,7 +108,7 @@ const originalTrainers = [
     city: 'Пловдив',
     image_url: '/images/trainers/asen-beshkov.webp',
     specialties: ['Психиатрия', 'Зависимости', 'Кроскултурална психиатрия', 'Психопатология'],
-    badges: ['лекар', 'психиатър', 'преподавател', 'EAAP обучение'],
+    badges: ['лекар', 'психиатър', 'преподавател', 'професионално обучение'],
     short_bio:
       'Психиатър и университетски преподавател с клиничен, изследователски и обучителен опит в психиатрията и психопатологията.',
     bio: [
@@ -412,13 +411,13 @@ export const courses = [
     eyebrow: 'Обучителен практически курс',
     duration: '15 месеца',
     format: 'две последователни нива',
-    certificate: 'Сертификат от БАИМП, признат от EAAP',
-    image_url: '/images/certificates/accreditation-counselling.webp',
+    certificate: 'Сертификат от БАИМП',
+    image_url: '/images/baimp-logo.webp',
     summary:
-      'Сертифицирана програма по стандартите на Европейската асоциация по приложна психология, насочена към психолози, студенти по психология, педагози, социални и медицински специалисти.',
+      'Сертифицирана програма, насочена към психолози, студенти по психология, педагози, социални и медицински специалисти.',
     description: [
       'Програмата е структурирана в две последователни нива - въвеждащ етап от 4 месеца и консултативен етап от 11 месеца, с възможност за сертифициране след всяка част.',
-      'Завършването на пълната програма предоставя право на членство в Европейската асоциация по приложна психология.',
+      'Завършването на пълната програма удостоверява придобитите консултативни знания и практически умения.',
       'Обучението съчетава теория, практика и супервизия в среда, която насърчава личностното израстване и професионалната компетентност.',
     ],
     topics: [
@@ -444,12 +443,12 @@ export const courses = [
     eyebrow: 'Обучителен практически курс',
     duration: '7 месеца',
     format: 'практическо обучение',
-    certificate: 'Сертификат от БАИМП и EAAP',
-    image_url: '/images/certificates/accreditation-psychotherapy.webp',
+    certificate: 'Сертификат от БАИМП',
+    image_url: '/images/baimp-logo.webp',
     summary:
       'Сертифицирана програма, насочена към психолози, психотерапевти, консултанти, педагози, медицински специалисти и специалисти в подпомагащи професии.',
     description: [
-      'Обучението "Основи на интермодалната психотерапия" е сертифицирана програма в Европейската асоциация по приложна психология.',
+      'Обучението "Основи на интермодалната психотерапия" е сертифицирана програма на БАИМП.',
       'Програмата предлага дълбоко потапяне в основните модалности на психотерапията, обединени в интермодален подход, който съчетава теория и практика.',
       'Развива умения за гъвкавост, осъзнатост и творческа интеграция на терапевтичните методи според индивидуалните нужди на клиента.',
     ],
@@ -473,8 +472,8 @@ export const courses = [
     eyebrow: 'Обучителен практически курс',
     duration: '1 уикенд',
     format: 'интензивен двудневен курс',
-    certificate: 'Сертификат от БАИМП, признат от EAAP',
-    image_url: '/images/certificates/accreditation-psychopathology.webp',
+    certificate: 'Сертификат от БАИМП',
+    image_url: '/images/baimp-logo.webp',
     summary:
       'Интензивен двудневен специализиран курс за психолози, психотерапевти и специалисти, които работят с психична уязвимост и личностови трудности.',
     description: [
@@ -499,7 +498,7 @@ export const news = [
     title: 'Нов обучителен сезон в БАИМП',
     category: 'Обучения',
     date: '2026-06-04',
-    image_url: '/images/certificates/accreditation-psychotherapy.webp',
+    image_url: '/images/baimp-logo.webp',
     summary:
       'БАИМП подготвя нови обучителни формати за специалисти, които искат да развиват практическите си умения в интермодалната психотерапия.',
     content: [
@@ -516,7 +515,7 @@ export const news = [
     title: 'Професионална общност и събития',
     category: 'Общност',
     date: '2026-06-04',
-    image_url: '/images/certificates/accreditation-counselling.webp',
+    image_url: '/images/baimp-logo.webp',
     summary:
       'Следете страницата за предстоящи срещи, семинари и практически формати за психолози, психотерапевти и помагащи специалисти.',
     content: [
@@ -531,22 +530,13 @@ export const news = [
 
 export const partners = [
   {
-    id: 'eaap',
-    name: 'European Association of Applied Psychology',
-    type: 'Акредитация и професионално признание',
-    description: 'Обученията на БАИМП са представени със сертификати и признание от EAAP.',
-    website: 'https://eaap.eu',
-    is_published: true,
-    sort_order: 1,
-  },
-  {
     id: 'baimp-community',
     name: 'БАИМП професионална общност',
     type: 'Обучители, психолози и психотерапевти',
     description: 'Общност от специалисти, които развиват интермодалния подход чрез обучения, семинари и професионална подкрепа.',
     website: 'https://baimp.org',
     is_published: true,
-    sort_order: 2,
+    sort_order: 1,
   },
 ]
 
@@ -554,27 +544,27 @@ export const certificates = [
   {
     id: 'certificate-counselling',
     title: 'Introduction to Psychological Counselling',
-    issuer: 'European Association of Applied Psychology',
+    issuer: 'Българска асоциация по интермодална психотерапия',
     valid_until: '21.11.2026',
-    image_url: '/images/certificates/accreditation-counselling.webp',
+    image_url: '/images/baimp-logo.webp',
     is_published: true,
     sort_order: 1,
   },
   {
     id: 'certificate-psychotherapy',
     title: 'Essentials of Intermodal Psychotherapy',
-    issuer: 'European Association of Applied Psychology',
+    issuer: 'Българска асоциация по интермодална психотерапия',
     valid_until: '10.04.2028',
-    image_url: '/images/certificates/accreditation-psychotherapy.webp',
+    image_url: '/images/baimp-logo.webp',
     is_published: true,
     sort_order: 2,
   },
   {
     id: 'certificate-psychopathology',
     title: 'General Psychopathology and Personality Disorders',
-    issuer: 'European Association of Applied Psychology',
+    issuer: 'Българска асоциация по интермодална психотерапия',
     valid_until: '07.07.2028',
-    image_url: '/images/certificates/accreditation-psychopathology.webp',
+    image_url: '/images/baimp-logo.webp',
     is_published: true,
     sort_order: 3,
   },
@@ -610,7 +600,7 @@ export const faqItems = [
   {
     question: 'Издава ли се сертификат?',
     answer:
-      'Да. След успешно завършване участниците получават сертификат, издаден от Българската асоциация по интермодална психотерапия, с признание от Европейската асоциация по приложна психология според конкретната програма.',
+      'Да. След успешно завършване участниците получават сертификат, издаден от Българската асоциация по интермодална психотерапия според конкретната програма.',
   },
   {
     question: 'Мога ли да се запиша онлайн?',
@@ -620,7 +610,7 @@ export const faqItems = [
   {
     question: 'Къде се провеждат срещите и обученията?',
     answer:
-      'Контактният адрес на БАИМП е гр. Пловдив, Флавия Бизнес Парк, ет. 2. За конкретни обучения и индивидуални срещи екипът потвърждава детайлите след заявка.',
+      'Контактният адрес на БАИМП е в гр. Пловдив, Флавия Бизнес Парк. Конкретните места за обучения и детайлите за срещите се предоставят индивидуално.',
   },
 ]
 
@@ -635,7 +625,7 @@ export const whyChooseItems = [
   },
   {
     title: 'Професионална рамка',
-    text: 'Програми със структура, практика, супервизия и сертификати, представени с международно признание от EAAP.',
+    text: 'Програми със структура, практика, супервизия и сертификати от БАИМП.',
   },
 ]
 
