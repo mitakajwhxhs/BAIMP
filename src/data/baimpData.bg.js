@@ -157,7 +157,7 @@ const originalTrainers = [
     name: 'Джулия Петрова',
     title: 'Детски психолог и психотерапевт',
     city: 'Пловдив',
-    image_url: '/images/trainers/julia-petrova.webp',
+    image_url: '/images/trainers/julia-petrova.jpg',
     specialties: ['Детска психология', 'DIR Floortime', 'Невроразвитие', 'Работа с деца и юноши'],
     badges: ['DIR Floortime', 'детски психолог', 'ICDL'],
     short_bio:

@@ -18,7 +18,6 @@ export const traineeGroups = [
           'Dimitriya Todorova Chestimenova',
           'Denitsa Angelova Machkarska',
           'Vilizara Albenova Kisimova',
-          'Venelina Penkova Pepelova',
           'Petya Gancheva Slavcheva',
           'Victoria Dimitrova Georgieva',
           'Nevena Borislavova Drumeva',
@@ -196,19 +195,6 @@ const traineeProfilesUnordered = [
     ],
   },
   {
-    name: 'Venelina Pepelova',
-    title: 'Psychologist and psychotherapist in training',
-    image_url: '/images/trainees/venelina-pepelova.jpg',
-    image_position: '50% 20%',
-    paragraphs: [
-      'Venelina Pepelova is a psychologist with professional experience in the fields of education, school psychology, and administrative management. Following a long-standing career in accounting and financial administration, she redirected her professional path toward psychology and supporting individuals within educational and social settings.',
-      'She holds a Master\'s degree in School Psychology from Paisii Hilendarski University of Plovdiv. Her academic background also includes studies in accounting, financial analysis, and business management, which have contributed to her strong analytical thinking, organizational skills, and ability to work effectively in dynamic environments.',
-      'Her professional experience includes work within educational institutions, municipal administration, and public sector organizations, where she has developed strong competencies in communication, teamwork, process management, and providing support to people facing various personal and professional challenges.',
-      'Venelina Pepelova believes in the importance of personal growth, emotional support, and the development of inner resilience. In her work, she combines professional expertise, analytical thinking, and a human-centered approach to help individuals navigate challenges, adapt to change, and achieve personal development.',
-      'Currently, she continues to expand her expertise in psychological counseling and psychological support for children, adolescents, and adults, while further developing her professional knowledge and competencies in the field of psychology.',
-    ],
-  },
-  {
     name: 'Nadezhda Atanasova',
     title: 'Psychologist and psychotherapist in training',
     image_url: '/images/trainees/nadezhda-atanasova.jpg',
@@ -269,7 +255,6 @@ const traineeProfileOrder = [
   'Victoria Georgieva',
   'Petya Slavcheva',
   'Vilizara Lilova',
-  'Venelina Pepelova',
 ]
 
 const traineeProfileOrderIndex = new Map(

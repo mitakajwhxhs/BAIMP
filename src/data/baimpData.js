@@ -137,7 +137,7 @@ const originalTrainers = [
     name: 'Julia Petrova',
     title: 'Child psychologist and psychotherapist',
     city: 'Plovdiv',
-    image_url: '/images/trainers/julia-petrova.webp',
+    image_url: '/images/trainers/julia-petrova.jpg',
     specialties: ['Child psychology', 'DIR Floortime', 'Neurodevelopment', 'Work with children and adolescents'],
     badges: ['DIR Floortime', 'child psychologist', 'ICDL'],
     short_bio:
